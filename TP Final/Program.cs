@@ -10,6 +10,7 @@ namespace TP_Final
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hola");
         }
     }
 }
