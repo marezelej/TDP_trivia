@@ -35,5 +35,16 @@ namespace WindowsFormsApp1
             if (result == MessageBoxResult.Yes)
                 Close();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Trivia newTrivia = new Trivia();
+            newTrivia.ShowDialog();
+        }
+
+        private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

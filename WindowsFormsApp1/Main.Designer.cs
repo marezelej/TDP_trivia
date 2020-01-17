@@ -41,7 +41,6 @@
             this.sesionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mSessionRanking = new System.Windows.Forms.ToolStripMenuItem();
             this.mMySessions = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.userData = new System.Windows.Forms.GroupBox();
@@ -70,8 +69,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.sesionesToolStripMenuItem,
-            this.menuLogOut});
+            this.sesionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(318, 28);
@@ -93,18 +91,21 @@
             this.mCreateUser.Name = "mCreateUser";
             this.mCreateUser.Size = new System.Drawing.Size(226, 26);
             this.mCreateUser.Text = "Nuevo";
+            this.mCreateUser.Click += new System.EventHandler(this.MCreateUser_Click);
             // 
             // mUsers
             // 
             this.mUsers.Name = "mUsers";
             this.mUsers.Size = new System.Drawing.Size(226, 26);
             this.mUsers.Text = "Administrar";
+            this.mUsers.Click += new System.EventHandler(this.MUsers_Click);
             // 
             // mChangePassword
             // 
             this.mChangePassword.Name = "mChangePassword";
             this.mChangePassword.Size = new System.Drawing.Size(226, 26);
             this.mChangePassword.Text = "Cambiar Contraseña";
+            this.mChangePassword.Click += new System.EventHandler(this.MChangePassword_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -147,20 +148,16 @@
             // mSessionRanking
             // 
             this.mSessionRanking.Name = "mSessionRanking";
-            this.mSessionRanking.Size = new System.Drawing.Size(174, 26);
+            this.mSessionRanking.Size = new System.Drawing.Size(224, 26);
             this.mSessionRanking.Text = "Ranking";
+            this.mSessionRanking.Click += new System.EventHandler(this.MSessionRanking_Click);
             // 
             // mMySessions
             // 
             this.mMySessions.Name = "mMySessions";
-            this.mMySessions.Size = new System.Drawing.Size(174, 26);
+            this.mMySessions.Size = new System.Drawing.Size(224, 26);
             this.mMySessions.Text = "Mis sesiones";
-            // 
-            // menuLogOut
-            // 
-            this.menuLogOut.Name = "menuLogOut";
-            this.menuLogOut.Size = new System.Drawing.Size(52, 24);
-            this.menuLogOut.Text = "Salir";
+            this.mMySessions.Click += new System.EventHandler(this.MMySessions_Click);
             // 
             // btnLogOut
             // 
@@ -197,6 +194,7 @@
             this.userData.TabIndex = 6;
             this.userData.TabStop = false;
             this.userData.Text = "Martín Lejman";
+            this.userData.Enter += new System.EventHandler(this.UserData_Enter);
             // 
             // label5
             // 
@@ -277,7 +275,6 @@
         private System.Windows.Forms.ToolStripMenuItem mCreateUser;
         private System.Windows.Forms.ToolStripMenuItem mUsers;
         private System.Windows.Forms.ToolStripMenuItem mChangePassword;
-        private System.Windows.Forms.ToolStripMenuItem menuLogOut;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.ToolStripMenuItem sesionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mSessionRanking;

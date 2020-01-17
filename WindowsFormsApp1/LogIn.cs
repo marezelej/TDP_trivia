@@ -58,5 +58,10 @@ namespace WindowsFormsApp1
             txtFileNumber.Text = "";
             txtPassword.Text = "";
         }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

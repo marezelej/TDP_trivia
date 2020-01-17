@@ -112,10 +112,15 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Alto",
+            "Medio",
+            "Bajo"});
             this.comboBox3.Location = new System.Drawing.Point(101, 62);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(199, 24);
             this.comboBox3.TabIndex = 7;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.ComboBox3_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -151,6 +156,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Iniciar Trivia!";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
