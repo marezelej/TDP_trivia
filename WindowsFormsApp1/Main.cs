@@ -90,14 +90,14 @@ namespace TriviaGUI
 
         private void MCreateUser_Click(object sender, EventArgs e)
         {
-            Register register = new Register();
+            Register register = new Register(iUsersFacade);
             register.ShowDialog();
         }
 
         private void MUsers_Click(object sender, EventArgs e)
         {
-            UserManager usermanager = new UserManager();
-            usermanager.ShowDialog();
+            Users users = new Users();
+            users.ShowDialog();
         }
     }
 }

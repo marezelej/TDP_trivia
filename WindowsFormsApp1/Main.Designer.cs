@@ -37,7 +37,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mOpentDB = new System.Windows.Forms.ToolStripMenuItem();
             this.mOpentDBAdmin = new System.Windows.Forms.ToolStripMenuItem();
-            this.mOpentDBImport = new System.Windows.Forms.ToolStripMenuItem();
             this.sesionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mSessionRanking = new System.Windows.Forms.ToolStripMenuItem();
             this.mMySessions = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,23 +118,16 @@
             // mOpentDB
             // 
             this.mOpentDB.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mOpentDBAdmin,
-            this.mOpentDBImport});
+            this.mOpentDBAdmin});
             this.mOpentDB.Name = "mOpentDB";
-            this.mOpentDB.Size = new System.Drawing.Size(153, 26);
+            this.mOpentDB.Size = new System.Drawing.Size(224, 26);
             this.mOpentDB.Text = "OpentDB";
             // 
             // mOpentDBAdmin
             // 
             this.mOpentDBAdmin.Name = "mOpentDBAdmin";
-            this.mOpentDBAdmin.Size = new System.Drawing.Size(193, 26);
+            this.mOpentDBAdmin.Size = new System.Drawing.Size(224, 26);
             this.mOpentDBAdmin.Text = "Administrar";
-            // 
-            // mOpentDBImport
-            // 
-            this.mOpentDBImport.Name = "mOpentDBImport";
-            this.mOpentDBImport.Size = new System.Drawing.Size(193, 26);
-            this.mOpentDBImport.Text = "Importar Datos";
             // 
             // sesionesToolStripMenuItem
             // 
@@ -291,7 +283,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mOpentDB;
         private System.Windows.Forms.ToolStripMenuItem mOpentDBAdmin;
-        private System.Windows.Forms.ToolStripMenuItem mOpentDBImport;
     }
 }
 
