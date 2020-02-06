@@ -11,16 +11,18 @@ using System.Windows;
 using System.Windows.Forms;
 using TP_Final;
 using TP_Final.IO;
+using TP_Final.Contract;
 
-namespace WindowsFormsApp1
+namespace TriviaGUI
 {
     public partial class Register : Form
     {
-        private UsersFacade iUsersFacade = new UsersFacade();
+        private IUsersFacade iUsersFacade;
 
-        public Register()
+        public Register(IUsersFacade pUsersFacade)
         {
             InitializeComponent();
+            iUsersFacade = pUsersFacade;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

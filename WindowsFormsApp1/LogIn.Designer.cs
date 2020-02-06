@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace TriviaGUI
 {
     partial class LogIn
     {
@@ -48,18 +48,18 @@ namespace WindowsFormsApp1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // textBox1
+            // txtFileNumber
             // 
             this.txtFileNumber.Location = new System.Drawing.Point(54, 33);
-            this.txtFileNumber.Name = "textBox1";
+            this.txtFileNumber.Name = "txtFileNumber";
             this.txtFileNumber.Size = new System.Drawing.Size(321, 22);
             this.txtFileNumber.TabIndex = 1;
             this.txtFileNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFileNumber_KeyPress);
             // 
-            // textBox2
+            // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(54, 91);
-            this.txtPassword.Name = "textBox2";
+            this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(321, 22);
             this.txtPassword.TabIndex = 2;

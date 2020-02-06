@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using TP_Final;
 using TP_Final.IO;
 
-namespace WindowsFormsApp1
+namespace TriviaGUI
 {
     public partial class NewTest : Form
     {

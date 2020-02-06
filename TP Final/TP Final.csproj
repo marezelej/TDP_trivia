@@ -47,6 +47,7 @@
     <Compile Include="CFachadaConjuntos.cs" />
     <Compile Include="CFachadaSesiones.cs" />
     <Compile Include="Conjunto.cs" />
+    <Compile Include="Contract\IUsersFacade.cs" />
     <Compile Include="Dificultad.cs" />
     <Compile Include="Dominio\Answer.cs" />
     <Compile Include="Dominio\Category.cs" />
@@ -55,6 +56,9 @@
     <Compile Include="Dominio\Session.cs" />
     <Compile Include="Dominio\Set.cs" />
     <Compile Include="Dominio\User.cs" />
+    <Compile Include="Exception\Authentication\AuthenticationException.cs" />
+    <Compile Include="Exception\Authentication\WrongPasswordException.cs" />
+    <Compile Include="Exception\Authentication\WrongFileNameException.cs" />
     <Compile Include="IO\DifficultyDTO.cs" />
     <Compile Include="IO\CategoryDTO.cs" />
     <Compile Include="IO\QuestionDTO.cs" />
@@ -65,9 +69,9 @@
     <Compile Include="Respuesta.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="IO\SessionDTO.cs" />
-    <Compile Include="SessionsFacade.cs" />
+    <Compile Include="Trivia\SessionsFacade.cs" />
     <Compile Include="IO\SetDTO.cs" />
-    <Compile Include="UsersFacade.cs" />
+    <Compile Include="Trivia\UsersFacade.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -76,7 +80,6 @@
   <ItemGroup>
     <Folder Include="DAL\" />
     <Folder Include="Dominio\OpentDB\" />
-    <Folder Include="Trivia\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

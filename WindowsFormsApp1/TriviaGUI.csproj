@@ -92,7 +92,6 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginManager.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

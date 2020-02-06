@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP_Final.Contract;
 using TP_Final.IO;
 
-namespace TP_Final
+namespace TP_Final.Trivia
 {
-    public class UsersFacade
+    public class UsersFacade: IUsersFacade
     {
         /// <summary>
         /// Crea un nuevo usuario en el sistema
@@ -25,12 +26,17 @@ namespace TP_Final
         /// <returns></returns>
         public UserDTO GetUser(string pFileNumber)
         {
-            throw new Exception("not implemented");
+            return new UserDTO();
         }
 
-        public bool Authenticate(string fileNumber, string password)
+        public void UpdateUser(UserDTO pUser)
         {
-            return true;
+            return;
+        }
+
+        public UserDTO Authenticate(string fileNumber, string password)
+        {
+            return new UserDTO();
         }
 
         public UserDTO GetAuthenticatedUser()
@@ -44,9 +50,14 @@ namespace TP_Final
             };
         }
 
+        public void ChangeAuthenticatedUserPassword(string pNewPassword)
+        {
+            return;
+        }
+
         public void LogOutAuthenticatedUser()
         {
-
+            return;
         }
     }
 }

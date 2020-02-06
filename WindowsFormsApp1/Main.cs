@@ -10,15 +10,16 @@ using System.Windows;
 using System.Windows.Forms;
 using TP_Final;
 using TP_Final.IO;
+using TP_Final.Contract;
 
-namespace WindowsFormsApp1
+namespace TriviaGUI
 {
     public partial class Main : Form
     {
-        UsersFacade iUsersFacade;
+        IUsersFacade iUsersFacade;
         SessionsFacade iSessionsFacade = new SessionsFacade();
 
-        public Main(UsersFacade pUsersFacade)
+        public Main(IUsersFacade pUsersFacade)
         {
             iUsersFacade = pUsersFacade;
             InitializeComponent();

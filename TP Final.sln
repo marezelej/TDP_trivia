@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "opentdbAPI", "opentdbAPI\op
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuestionsAdapters", "QuestionsAdapters\QuestionsAdapters.csproj", "{77660A45-5A02-4205-B431-876CA0C18340}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{68E692CE-EA80-42FE-B806-1D120A5B3CD3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriviaGUI", "WindowsFormsApp1\TriviaGUI.csproj", "{68E692CE-EA80-42FE-B806-1D120A5B3CD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{B313D179-855D-40B7-B36E-011BA110D739}"
 EndProject

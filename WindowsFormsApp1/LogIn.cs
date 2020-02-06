@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
-using TP_Final;
+using TP_Final.Contract;
+using TP_Final.Trivia;
+using TP_Final.Error.Authentication;
 
-namespace WindowsFormsApp1
+namespace TriviaGUI
 {
     public partial class LogIn : Form
     {
-        UsersFacade iUsersFacade = new UsersFacade();
+        IUsersFacade iUsersFacade = new UsersFacade();
 
         public LogIn()
         {
@@ -27,7 +22,28 @@ namespace WindowsFormsApp1
             string fileNumber   = txtFileNumber.Text;
             string password     = txtPassword.Text;
 
-            if(!iUsersFacade.Authenticate(fileNumber, password))
+            try
+            {
+                iUsersFacade.Authenticate(fileNumber, password);
+            } catch (WrongPasswordException)
+            {
+                System.Windows.MessageBox.Show(
+                    "Las credenciales son incorrectas. Por favor, reintentar...",
+                    "Error de autenticación",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+                return;
+            } catch (WrongFileNameException)
+            {
+                System.Windows.MessageBox.Show(
+                    "Las credenciales son incorrectas. Por favor, reintentar...",
+                    "Error de autenticación",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+                return;
+            } catch (Exception)
             {
                 System.Windows.MessageBox.Show(
                     "Las credenciales son incorrectas. Por favor, reintentar...",
@@ -61,20 +77,15 @@ namespace WindowsFormsApp1
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            Register registerWindow = new Register();
+            Register registerWindow = new Register(iUsersFacade);
             registerWindow.ShowDialog();
         }
 
         private void ChangeVisibility()
         {
-            Visible = !Visible;
-            txtFileNumber.Text = "";
-            txtPassword.Text = "";
-        }
-
-        private void LogIn_Load(object sender, EventArgs e)
-        {
-
+            Visible             = !Visible;
+            txtFileNumber.Text  = "";
+            txtPassword.Text    = "";
         }
     }
 }
