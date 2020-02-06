@@ -30,15 +30,15 @@
         {
             this.cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.firstName = new System.Windows.Forms.TextBox();
-            this.lastName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.fileNumber = new System.Windows.Forms.TextBox();
+            this.txtFileNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.repeatPassword = new System.Windows.Forms.TextBox();
+            this.txtRepeatPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.password = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.accept = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -52,7 +52,7 @@
             this.cancel.TabIndex = 0;
             this.cancel.Text = "Cancelar";
             this.cancel.UseVisualStyleBackColor = true;
-            this.cancel.Click += new System.EventHandler(this.cancel_Click);
+            this.cancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -63,19 +63,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre:";
             // 
-            // firstName
+            // txtFirstName
             // 
-            this.firstName.Location = new System.Drawing.Point(100, 43);
-            this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(289, 22);
-            this.firstName.TabIndex = 2;
+            this.txtFirstName.Location = new System.Drawing.Point(100, 43);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(289, 22);
+            this.txtFirstName.TabIndex = 2;
             // 
-            // lastName
+            // txtLastName
             // 
-            this.lastName.Location = new System.Drawing.Point(100, 80);
-            this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(289, 22);
-            this.lastName.TabIndex = 4;
+            this.txtLastName.Location = new System.Drawing.Point(100, 80);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(289, 22);
+            this.txtLastName.TabIndex = 4;
             // 
             // label2
             // 
@@ -86,12 +86,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Apellido:";
             // 
-            // fileNumber
+            // txtFileNumber
             // 
-            this.fileNumber.Location = new System.Drawing.Point(100, 117);
-            this.fileNumber.Name = "fileNumber";
-            this.fileNumber.Size = new System.Drawing.Size(289, 22);
-            this.fileNumber.TabIndex = 6;
+            this.txtFileNumber.Location = new System.Drawing.Point(100, 117);
+            this.txtFileNumber.Name = "txtFileNumber";
+            this.txtFileNumber.Size = new System.Drawing.Size(289, 22);
+            this.txtFileNumber.TabIndex = 6;
+            this.txtFileNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFileNumber_KeyPress);
             // 
             // label3
             // 
@@ -104,9 +105,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.repeatPassword);
+            this.groupBox1.Controls.Add(this.txtRepeatPassword);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.password);
+            this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(35, 145);
             this.groupBox1.Name = "groupBox1";
@@ -115,13 +116,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Autenticación";
             // 
-            // repeatPassword
+            // txtRepeatPassword
             // 
-            this.repeatPassword.Location = new System.Drawing.Point(9, 90);
-            this.repeatPassword.Name = "repeatPassword";
-            this.repeatPassword.PasswordChar = '*';
-            this.repeatPassword.Size = new System.Drawing.Size(339, 22);
-            this.repeatPassword.TabIndex = 11;
+            this.txtRepeatPassword.Location = new System.Drawing.Point(9, 90);
+            this.txtRepeatPassword.Name = "txtRepeatPassword";
+            this.txtRepeatPassword.PasswordChar = '*';
+            this.txtRepeatPassword.Size = new System.Drawing.Size(339, 22);
+            this.txtRepeatPassword.TabIndex = 11;
             // 
             // label5
             // 
@@ -132,13 +133,13 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Repetir Contraseña:";
             // 
-            // password
+            // txtPassword
             // 
-            this.password.Location = new System.Drawing.Point(9, 45);
-            this.password.Name = "password";
-            this.password.PasswordChar = '*';
-            this.password.Size = new System.Drawing.Size(339, 22);
-            this.password.TabIndex = 9;
+            this.txtPassword.Location = new System.Drawing.Point(9, 45);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(339, 22);
+            this.txtPassword.TabIndex = 9;
             // 
             // label4
             // 
@@ -157,7 +158,7 @@
             this.accept.TabIndex = 8;
             this.accept.Text = "Registrar";
             this.accept.UseVisualStyleBackColor = true;
-            this.accept.Click += new System.EventHandler(this.accept_Click);
+            this.accept.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // Register
             // 
@@ -166,11 +167,11 @@
             this.ClientSize = new System.Drawing.Size(436, 349);
             this.Controls.Add(this.accept);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.fileNumber);
+            this.Controls.Add(this.txtFileNumber);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lastName);
+            this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.firstName);
+            this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancel);
             this.Name = "Register";
@@ -187,15 +188,15 @@
 
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox firstName;
-        private System.Windows.Forms.TextBox lastName;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox fileNumber;
+        private System.Windows.Forms.TextBox txtFileNumber;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox repeatPassword;
+        private System.Windows.Forms.TextBox txtRepeatPassword;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button accept;
     }

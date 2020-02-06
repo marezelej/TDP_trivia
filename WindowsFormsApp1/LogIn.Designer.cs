@@ -30,42 +30,36 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.ButtonLogIn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtFileNumber = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ButtonRegister = new System.Windows.Forms.Button();
+            this.registerAction = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // ButtonLogIn
+            // button1
             // 
-            this.ButtonLogIn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonLogIn.Location = new System.Drawing.Point(54, 147);
-            this.ButtonLogIn.Name = "ButtonLogIn";
-            this.ButtonLogIn.Size = new System.Drawing.Size(321, 30);
-            this.ButtonLogIn.TabIndex = 0;
-            this.ButtonLogIn.Text = "Iniciar Sesión";
-            this.ButtonLogIn.UseVisualStyleBackColor = true;
-            this.ButtonLogIn.Click += new System.EventHandler(this.btnLogin_Click);
+            this.button1.Location = new System.Drawing.Point(54, 147);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(321, 30);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Iniciar Sesión";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // txtFileNumber
+            // textBox1
             // 
-            this.txtFileNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFileNumber.Location = new System.Drawing.Point(54, 33);
-            this.txtFileNumber.Name = "txtFileNumber";
+            this.txtFileNumber.Name = "textBox1";
             this.txtFileNumber.Size = new System.Drawing.Size(321, 22);
             this.txtFileNumber.TabIndex = 1;
-            this.txtFileNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txtFileNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFileNumber_KeyPress);
             // 
-            // txtPassword
+            // textBox2
             // 
-            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Location = new System.Drawing.Point(54, 91);
-            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Name = "textBox2";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(321, 22);
             this.txtPassword.TabIndex = 2;
@@ -88,33 +82,29 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 4;
             this.label2.Text = "Contraseña";
             // 
-            // ButtonRegister
+            // registerAction
             // 
-            this.ButtonRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ButtonRegister.Location = new System.Drawing.Point(54, 191);
-            this.ButtonRegister.Name = "ButtonRegister";
-            this.ButtonRegister.Size = new System.Drawing.Size(321, 30);
-            this.ButtonRegister.TabIndex = 5;
-            this.ButtonRegister.Text = "Registrarme";
-            this.ButtonRegister.UseVisualStyleBackColor = true;
-            this.ButtonRegister.Click += new System.EventHandler(this.button2_Click);
+            this.registerAction.Location = new System.Drawing.Point(54, 191);
+            this.registerAction.Name = "registerAction";
+            this.registerAction.Size = new System.Drawing.Size(321, 30);
+            this.registerAction.TabIndex = 5;
+            this.registerAction.Text = "Registrarme";
+            this.registerAction.UseVisualStyleBackColor = true;
+            this.registerAction.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // LogIn
             // 
-            this.AcceptButton = this.ButtonLogIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 239);
-            this.Controls.Add(this.ButtonRegister);
+            this.Controls.Add(this.registerAction);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtFileNumber);
-            this.Controls.Add(this.ButtonLogIn);
+            this.Controls.Add(this.button1);
             this.Name = "LogIn";
             this.Text = "Iniciar Sesión";
-            this.Load += new System.EventHandler(this.LogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,11 +112,11 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        private System.Windows.Forms.Button ButtonLogIn;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtFileNumber;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button ButtonRegister;
+        private System.Windows.Forms.Button registerAction;
     }
 }

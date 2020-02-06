@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using TP_Final;
+using TP_Final.IO;
 
 namespace WindowsFormsApp1
 {
     public partial class Main : Form
     {
-        public Main()
+        UsersFacade iUsersFacade;
+        SessionsFacade iSessionsFacade = new SessionsFacade();
+
+        public Main(UsersFacade pUsersFacade)
         {
+            iUsersFacade = pUsersFacade;
             InitializeComponent();
         }
 
@@ -31,6 +37,14 @@ namespace WindowsFormsApp1
 
         private void Main_Load(object sender, EventArgs e)
         {
+            UserDTO user = iUsersFacade.GetAuthenticatedUser();
+            SessionDTO bestSesssion = iSessionsFacade.GetBestSession(user.Id);
+
+            userData.Text       = $"{user.FirstName} {user.LastName}";
+            lBestScore.Text     = $"{bestSesssion.Score} puntos";
+            lBestTime.Text      = $"{bestSesssion.Time.Minutes} minutos, {bestSesssion.Time.Seconds} segundos";
+            lBestQuantity.Text  = $"{bestSesssion.Quantity} preguntas";
+
             CenterToScreen();
         }
 
@@ -44,7 +58,10 @@ namespace WindowsFormsApp1
             MessageBoxResult result = System.Windows.MessageBox.Show(messageBoxText, caption, button, icon);
 
             if (result == MessageBoxResult.Yes)
+            {
+                iUsersFacade.LogOutAuthenticatedUser();
                 this.Close();
+            }
         }
 
         private void UserData_Enter(object sender, EventArgs e)

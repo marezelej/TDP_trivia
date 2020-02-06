@@ -44,18 +44,19 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.userData = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lBestTime = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lBestQuantity = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lBestScore = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.userData.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNewTest
             // 
-            this.btnNewTest.Location = new System.Drawing.Point(54, 140);
+            this.btnNewTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewTest.Location = new System.Drawing.Point(310, 168);
             this.btnNewTest.Name = "btnNewTest";
             this.btnNewTest.Size = new System.Drawing.Size(207, 38);
             this.btnNewTest.TabIndex = 1;
@@ -72,7 +73,7 @@
             this.sesionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(318, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(529, 28);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -161,7 +162,8 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(54, 184);
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(20, 168);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(207, 38);
             this.btnLogOut.TabIndex = 4;
@@ -172,85 +174,85 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 17);
+            this.label1.Size = new System.Drawing.Size(115, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Mejor puntaje:";
             // 
             // userData
             // 
-            this.userData.Controls.Add(this.label5);
+            this.userData.Controls.Add(this.lBestTime);
             this.userData.Controls.Add(this.label6);
-            this.userData.Controls.Add(this.label3);
+            this.userData.Controls.Add(this.lBestQuantity);
             this.userData.Controls.Add(this.label4);
-            this.userData.Controls.Add(this.label2);
+            this.userData.Controls.Add(this.lBestScore);
             this.userData.Controls.Add(this.label1);
             this.userData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userData.Location = new System.Drawing.Point(20, 42);
             this.userData.Name = "userData";
-            this.userData.Size = new System.Drawing.Size(281, 88);
+            this.userData.Size = new System.Drawing.Size(497, 112);
             this.userData.TabIndex = 6;
             this.userData.TabStop = false;
             this.userData.Text = "Martín Lejman";
             this.userData.Enter += new System.EventHandler(this.UserData_Enter);
             // 
-            // label5
+            // lBestTime
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(151, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 17);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "26 segundos";
+            this.lBestTime.AutoSize = true;
+            this.lBestTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBestTime.Location = new System.Drawing.Point(205, 80);
+            this.lBestTime.Name = "lBestTime";
+            this.lBestTime.Size = new System.Drawing.Size(104, 20);
+            this.lBestTime.TabIndex = 10;
+            this.lBestTime.Text = "26 segundos";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 62);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 80);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 17);
+            this.label6.Size = new System.Drawing.Size(69, 20);
             this.label6.TabIndex = 9;
             this.label6.Text = "Tiempo:";
             // 
-            // label3
+            // lBestQuantity
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(151, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "10 preguntas";
+            this.lBestQuantity.AutoSize = true;
+            this.lBestQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBestQuantity.Location = new System.Drawing.Point(205, 54);
+            this.lBestQuantity.Name = "lBestQuantity";
+            this.lBestQuantity.Size = new System.Drawing.Size(106, 20);
+            this.lBestQuantity.TabIndex = 8;
+            this.lBestQuantity.Text = "10 preguntas";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 45);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 17);
+            this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "Cantidad:";
             // 
-            // label2
+            // lBestScore
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(151, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "200 puntos";
+            this.lBestScore.AutoSize = true;
+            this.lBestScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBestScore.Location = new System.Drawing.Point(205, 28);
+            this.lBestScore.Name = "lBestScore";
+            this.lBestScore.Size = new System.Drawing.Size(91, 20);
+            this.lBestScore.TabIndex = 6;
+            this.lBestScore.Text = "200 puntos";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 234);
+            this.ClientSize = new System.Drawing.Size(529, 218);
             this.Controls.Add(this.userData);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnNewTest);
@@ -281,11 +283,11 @@
         private System.Windows.Forms.ToolStripMenuItem mMySessions;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox userData;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lBestTime;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lBestQuantity;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lBestScore;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mOpentDB;
         private System.Windows.Forms.ToolStripMenuItem mOpentDBAdmin;

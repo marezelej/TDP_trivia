@@ -6,13 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
+using TP_Final;
 
 namespace WindowsFormsApp1
 {
     public partial class LogIn : Form
     {
-        LoginManager iLogin = new LoginManager();
+        UsersFacade iUsersFacade = new UsersFacade();
 
         public LogIn()
         {
@@ -22,15 +24,26 @@ namespace WindowsFormsApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string legajo   = txtFileNumber.Text;
-            string password = txtPassword.Text;
+            string fileNumber   = txtFileNumber.Text;
+            string password     = txtPassword.Text;
+
+            if(!iUsersFacade.Authenticate(fileNumber, password))
+            {
+                System.Windows.MessageBox.Show(
+                    "Las credenciales son incorrectas. Por favor, reintentar...",
+                    "Error de autenticación",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+                return;
+            }
 
             ShowMain();
         }
 
         private void ShowMain()
         {
-            Main mainWindow = new Main();
+            Main mainWindow = new Main(iUsersFacade);
             mainWindow.FormClosed += MainWindow_FormClosed;
             mainWindow.Show();
             ChangeVisibility();
@@ -41,12 +54,12 @@ namespace WindowsFormsApp1
             ChangeVisibility();
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtFileNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
             Register registerWindow = new Register();
             registerWindow.ShowDialog();
