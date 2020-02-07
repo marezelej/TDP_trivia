@@ -15,7 +15,7 @@ namespace TriviaGUI
 {
     public partial class NewTest : Form
     {
-        private SessionsFacade iSessionsController = new SessionsFacade();
+        private SessionFacade iSessionsController = new SessionFacade();
 
         public NewTest()
         {

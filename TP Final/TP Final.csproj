@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +36,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,18 +60,30 @@
     <Compile Include="CFachadaConjuntos.cs" />
     <Compile Include="CFachadaSesiones.cs" />
     <Compile Include="Conjunto.cs" />
-    <Compile Include="Contract\IUsersFacade.cs" />
+    <Compile Include="Contract\IUserFacade.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\UserMap.cs" />
+    <Compile Include="DAL\EntityFramework\Migrations\Configuration.cs" />
+    <Compile Include="DAL\EntityFramework\Repository.cs" />
+    <Compile Include="DAL\EntityFramework\TriviaDbContext1.cs" />
+    <Compile Include="DAL\EntityFramework\UnitOfWork.cs" />
+    <Compile Include="DAL\EntityFramework\UserRepository.cs" />
+    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\IUnitOfWork.cs" />
+    <Compile Include="DAL\IUserRepository.cs" />
     <Compile Include="Dificultad.cs" />
-    <Compile Include="Dominio\Answer.cs" />
-    <Compile Include="Dominio\Category.cs" />
-    <Compile Include="Dominio\Difficulty.cs" />
-    <Compile Include="Dominio\Question.cs" />
-    <Compile Include="Dominio\Session.cs" />
-    <Compile Include="Dominio\Set.cs" />
-    <Compile Include="Dominio\User.cs" />
-    <Compile Include="Exception\Authentication\AuthenticationException.cs" />
-    <Compile Include="Exception\Authentication\WrongPasswordException.cs" />
-    <Compile Include="Exception\Authentication\WrongFileNameException.cs" />
+    <Compile Include="Domain\Answer.cs" />
+    <Compile Include="Domain\Category.cs" />
+    <Compile Include="Domain\Difficulty.cs" />
+    <Compile Include="Domain\Question.cs" />
+    <Compile Include="Domain\Session.cs" />
+    <Compile Include="Domain\Set.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Domain\UserAction.cs" />
+    <Compile Include="Domain\UserRole.cs" />
+    <Compile Include="Error\Authentication\AuthenticationException.cs" />
+    <Compile Include="Error\Authentication\NonAuthenticationException.cs" />
+    <Compile Include="Error\Authentication\WrongPasswordException.cs" />
+    <Compile Include="Error\Authentication\WrongFileNameException.cs" />
     <Compile Include="IO\DifficultyDTO.cs" />
     <Compile Include="IO\CategoryDTO.cs" />
     <Compile Include="IO\QuestionDTO.cs" />
@@ -69,17 +94,25 @@
     <Compile Include="Respuesta.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="IO\SessionDTO.cs" />
-    <Compile Include="Trivia\SessionsFacade.cs" />
+    <Compile Include="Trivia\SessionFacade.cs" />
     <Compile Include="IO\SetDTO.cs" />
-    <Compile Include="Trivia\UsersFacade.cs" />
+    <Compile Include="Trivia\UserFacade.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\" />
-    <Folder Include="Dominio\OpentDB\" />
+    <Folder Include="Domain\OpentDB\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
 </Project>

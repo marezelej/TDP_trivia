@@ -16,10 +16,10 @@ namespace TriviaGUI
 {
     public partial class Main : Form
     {
-        IUsersFacade iUsersFacade;
-        SessionsFacade iSessionsFacade = new SessionsFacade();
+        IUserFacade iUsersFacade;
+        SessionFacade iSessionsFacade = new SessionFacade();
 
-        public Main(IUsersFacade pUsersFacade)
+        public Main(IUserFacade pUsersFacade)
         {
             iUsersFacade = pUsersFacade;
             InitializeComponent();

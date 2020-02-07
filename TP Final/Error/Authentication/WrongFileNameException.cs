@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TP_Final.Error.Authentication
 {
-    public class WrongPasswordException: AuthenticationException
+    /// <summary>
+    /// Se lanza cuando el número de legajo dado es incorrecto
+    /// </summary>
+    public class WrongFileNameException: AuthenticationException
     {
     }
 }

@@ -17,9 +17,9 @@ namespace TriviaGUI
 {
     public partial class Register : Form
     {
-        private IUsersFacade iUsersFacade;
+        private IUserFacade iUsersFacade;
 
-        public Register(IUsersFacade pUsersFacade)
+        public Register(IUserFacade pUsersFacade)
         {
             InitializeComponent();
             iUsersFacade = pUsersFacade;

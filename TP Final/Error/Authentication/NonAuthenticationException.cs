@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TP_Final.Error.Authentication
 {
-    public class WrongFileNameException: AuthenticationException
+    /// <summary>
+    /// Se lanza cuando no hay un usuario autenticado en el sistema
+    /// </summary>
+    public class NonAuthenticationException : Exception
     {
     }
 }

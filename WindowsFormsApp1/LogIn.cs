@@ -9,7 +9,7 @@ namespace TriviaGUI
 {
     public partial class LogIn : Form
     {
-        IUsersFacade iUsersFacade = new UsersFacade();
+        IUserFacade iUsersFacade = new UserFacade();
 
         public LogIn()
         {
@@ -28,7 +28,7 @@ namespace TriviaGUI
             } catch (WrongPasswordException)
             {
                 System.Windows.MessageBox.Show(
-                    "Las credenciales son incorrectas. Por favor, reintentar...",
+                    "La contraseña es incorrecta. Por favor, reintentar...",
                     "Error de autenticación",
                     MessageBoxButton.OK,
                     MessageBoxImage.Warning
@@ -37,7 +37,7 @@ namespace TriviaGUI
             } catch (WrongFileNameException)
             {
                 System.Windows.MessageBox.Show(
-                    "Las credenciales son incorrectas. Por favor, reintentar...",
+                    "El número de legajo es incorrecto. Por favor, reintentar...",
                     "Error de autenticación",
                     MessageBoxButton.OK,
                     MessageBoxImage.Warning
@@ -46,7 +46,7 @@ namespace TriviaGUI
             } catch (Exception)
             {
                 System.Windows.MessageBox.Show(
-                    "Las credenciales son incorrectas. Por favor, reintentar...",
+                    "Ocurrió un error inesperado. Por favor, reintentar...",
                     "Error de autenticación",
                     MessageBoxButton.OK,
                     MessageBoxImage.Warning

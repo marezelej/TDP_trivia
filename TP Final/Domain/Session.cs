@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TP_Final.Dominio
+namespace TP_Final.Domain
 {
+    /// <summary>
+    /// Una sesión de preguntas
+    /// </summary>
     internal class Session
     {
         int Id { get; set; }

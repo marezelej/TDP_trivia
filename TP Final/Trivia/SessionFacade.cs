@@ -7,7 +7,7 @@ using TP_Final.IO;
 
 namespace TP_Final
 {
-    public class SessionsFacade
+    public class SessionFacade
     {
         /// <summary>
         /// Obtiene la mejor sesion del usuario pasado
