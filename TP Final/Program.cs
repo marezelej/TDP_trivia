@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP_Final.Trivia;
 
 namespace TP_Final
 {
@@ -21,6 +22,11 @@ namespace TP_Final
             2 Elegir el nivel de dificultad de las preguntas.
             3 Seleccionar la cantidad de preguntas a contestar, que como mínimo deberán ser 10.*/
 
+            UserFacade facade = new UserFacade();
+
+            facade.Authenticate("14119550", "12345678");
+
+            /*
             IList<Conjunto> conjuntos = iCConjuntos.GetConjuntosDisponibles();
             iCConjuntos.SetConjunto(conjuntos.First());
             foreach (Conjunto con in conjuntos)
@@ -58,7 +64,7 @@ namespace TP_Final
             }
             int tiempo = iCConjuntos.GetTiempoEstimado(10);
             Sesion sesion = new Sesion(new Usuario());
-            
+            */
         }
     }
 }

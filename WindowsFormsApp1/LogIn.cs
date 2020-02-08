@@ -17,7 +17,7 @@ namespace TriviaGUI
             CenterToScreen();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs eventArgs)
         {
             string fileNumber   = txtFileNumber.Text;
             string password     = txtPassword.Text;
@@ -25,7 +25,17 @@ namespace TriviaGUI
             try
             {
                 iUsersFacade.Authenticate(fileNumber, password);
-            } catch (WrongPasswordException)
+            } catch (WrongFileNameException)
+            {
+                System.Windows.MessageBox.Show(
+                    "El número de legajo no se encuentra en el sistema. Por favor, reintentar...",
+                    "Error de autenticación",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+                return;
+            }
+            catch (WrongPasswordException)
             {
                 System.Windows.MessageBox.Show(
                     "La contraseña es incorrecta. Por favor, reintentar...",
@@ -34,17 +44,9 @@ namespace TriviaGUI
                     MessageBoxImage.Warning
                 );
                 return;
-            } catch (WrongFileNameException)
+            } catch (Exception e)
             {
-                System.Windows.MessageBox.Show(
-                    "El número de legajo es incorrecto. Por favor, reintentar...",
-                    "Error de autenticación",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning
-                );
-                return;
-            } catch (Exception)
-            {
+                System.Console.WriteLine(e);
                 System.Windows.MessageBox.Show(
                     "Ocurrió un error inesperado. Por favor, reintentar...",
                     "Error de autenticación",

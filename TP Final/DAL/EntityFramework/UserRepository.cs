@@ -27,7 +27,7 @@ namespace TP_Final.DAL.EntityFramework
         /// <returns>El primer usuario encontrado</returns>
         public User GetByFileNumber(string pFileNumber)
         {
-            return iDbContext.Users.First(u => u.FileNumber == pFileNumber);
+            return iDbContext.Users.Where(u => u.FileNumber == pFileNumber).FirstOrDefault();
         }
     }
 }

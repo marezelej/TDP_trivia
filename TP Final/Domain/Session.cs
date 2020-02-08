@@ -8,14 +8,15 @@ namespace TP_Final.Domain
     /// </summary>
     internal class Session
     {
-        int Id { get; set; }
-        int UserId { get; set; }
-        int Score { get; set; }
-        int Quantity { get; set; }
-        TimeSpan Time { get; set; }
-        Set Set { get; set; }
-        Category Category { get; set; }
-        Difficulty Difficulty { get; set; }
-        IList<Question> Questions { get; set; }
+        internal int Id { get; set; }
+        internal int Score { get; set; }
+        internal int Quantity { get; set; }
+        internal TimeSpan Time { get; set; }
+
+        /* AGREGAR LUEGO
+        internal Set Set { get; set; }
+        internal Category Category { get; set; }
+        internal Difficulty Difficulty { get; set; }
+        internal IList<Question> Questions { get; set; } */
     }
 }

@@ -15,9 +15,10 @@ namespace TP_Final.DAL.EntityFramework
         /// <summary>
         /// Construye el DbContext con nombre AccountManager
         /// </summary>
-        public TriviaDbContext() : base("AccountManager")
+        public TriviaDbContext(bool pMigrate = false) : base("TriviaConnection")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<TriviaDbContext, Configuration>());
+            if(pMigrate)
+                Database.SetInitializer(new MigrateDatabaseToLatestVersion<TriviaDbContext, Configuration>());
         }
 
         /// <summary>
