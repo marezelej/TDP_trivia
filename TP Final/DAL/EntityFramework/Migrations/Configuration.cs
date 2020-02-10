@@ -13,6 +13,7 @@ namespace TP_Final.DAL.EntityFramework.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
             ContextKey = "TP_Final.DAL.EntityFramework.TriviaDBContext";
         }
 

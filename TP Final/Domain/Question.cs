@@ -7,11 +7,11 @@ namespace TP_Final.Domain
     /// </summary>
     internal class Question
     {
-        int Id { get; set; }
-        string Description { get; set; }
-        Category Category { get; set; }
-        Difficulty Difficulty { get; set; }
-        IList<Answer> Answers { get; set; }
-        IList<Answer> CorrectAnswers { get; set; }
+        internal int Id { get; set; }
+        internal string Description { get; set; }
+        internal Set Set { get; set; }
+        internal Category Category { get; set; }
+        internal Difficulty Difficulty { get; set; }
+        internal IList<Answer> Answers { get; set; }
     }
 }

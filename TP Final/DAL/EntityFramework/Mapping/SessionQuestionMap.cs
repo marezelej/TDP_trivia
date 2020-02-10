@@ -8,37 +8,23 @@ using TP_Final.Domain;
 
 namespace TP_Final.DAL.EntityFramework.Mapping
 {
-    class SessionMap : EntityTypeConfiguration<Session>
+    class SessionQuestionMap : EntityTypeConfiguration<SessionQuestion>
     {
-        public SessionMap()
+        public SessionQuestionMap()
         {
-            HasKey(pSession => pSession.Id);
+            HasKey(pSessionQuestion => pSessionQuestion.Id);
 
             Property(pSession => pSession.Id)
                 .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
-
-            Property(pSession => pSession.Score)
-                .IsRequired();
-
-            Property(pSession => pSession.Quantity)
-                .IsRequired();
-
+            
             Property(pSession => pSession.Time)
                 .IsRequired();
 
-            HasRequired(pSession => pSession.User)
+            HasRequired(pSessionQuestion => pSessionQuestion.Session)
                 .WithMany()
                 .WillCascadeOnDelete(false);
 
-            HasRequired(pSession => pSession.Set)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-
-            HasRequired(pSession => pSession.Category)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-
-            HasRequired(pSession => pSession.Difficulty)
+            HasRequired(pSessionQuestion => pSessionQuestion.Question)
                 .WithMany()
                 .WillCascadeOnDelete(false);
         }

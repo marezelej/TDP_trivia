@@ -12,11 +12,10 @@ namespace TP_Final.Domain
         internal int Score { get; set; }
         internal int Quantity { get; set; }
         internal TimeSpan Time { get; set; }
-
-        /* AGREGAR LUEGO
+        internal User User { get; set; }
         internal Set Set { get; set; }
         internal Category Category { get; set; }
         internal Difficulty Difficulty { get; set; }
-        internal IList<Question> Questions { get; set; } */
+        internal IList<SessionQuestion> Questions { get; set; }
     }
 }

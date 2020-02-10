@@ -5,8 +5,9 @@
     /// </summary>
     internal class Answer
     {
-        int Id { get; set; }
-        string Description { get; set; }
-        Question Question { get; set; }
+        internal int Id { get; set; }
+        internal string Description { get; set; }
+        internal bool IsCorrect { get; set; }
+        internal Question Question { get; set; }
     }
 }

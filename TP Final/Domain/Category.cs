@@ -11,7 +11,8 @@ namespace TP_Final.Domain
     /// </summary>
     class Category
     {
-        int Id { get; set; }
-        string Name { get; set; }
+        internal int Id { get; set; }
+        internal string Name { get; set; }
+        internal Set Set { get; set; }
     }
 }

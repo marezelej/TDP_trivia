@@ -35,9 +35,6 @@ namespace TP_Final.DAL.EntityFramework.Mapping
 
             this.Property(pUser => pUser.IsAdmin)
                 .IsRequired();
-
-            this.HasMany(pUser => pUser.Sessions)
-                .WithRequired();
         }
     }
 }

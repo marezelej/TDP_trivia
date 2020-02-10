@@ -7,10 +7,10 @@ namespace TP_Final.Domain
     /// </summary>
     internal class Set
     {
-        int Id { get; set; }
-        string Name { get; set; }
-        IList<Category> Categories { get; set; }
-        IList<Difficulty> Difficulties { get; set; }
-        IList<Question> Questions { get; set; }
+        internal int Id { get; set; }
+        internal string Name { get; set; }
+        internal IList<Category> Categories { get; set; }
+        internal IList<Difficulty> Difficulties { get; set; }
+        internal IList<Question> Questions { get; set; }
     }
 }
