@@ -28,58 +28,236 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.UsersGB = new System.Windows.Forms.GroupBox();
+            this.UsersDGV = new System.Windows.Forms.DataGridView();
+            this.FilterGB = new System.Windows.Forms.GroupBox();
+            this.UserLastNameLabel = new System.Windows.Forms.Label();
+            this.FirstNameLabel = new System.Windows.Forms.Label();
+            this.UserLastName = new System.Windows.Forms.TextBox();
+            this.UserFirstName = new System.Windows.Forms.TextBox();
+            this.userType = new System.Windows.Forms.ComboBox();
+            this.CleanButton = new System.Windows.Forms.Button();
+            this.ApplyButton = new System.Windows.Forms.Button();
+            this.UserFileNumberLabel = new System.Windows.Forms.Label();
+            this.userFileNumber = new System.Windows.Forms.TextBox();
+            this.UserTypeLabel = new System.Windows.Forms.Label();
+            this.userStateInactive = new System.Windows.Forms.RadioButton();
+            this.UserStateLabel = new System.Windows.Forms.Label();
+            this.userStateActive = new System.Windows.Forms.RadioButton();
+            this.AddUserButton = new System.Windows.Forms.Button();
+            this.DeleteUserButton = new System.Windows.Forms.Button();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Admin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.userType = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.userFileNumber = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.userStateInactive = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.userStateActive = new System.Windows.Forms.RadioButton();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.UsersGB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UsersDGV)).BeginInit();
+            this.FilterGB.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // UsersGB
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 146);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(710, 393);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Usuarios";
+            this.UsersGB.Controls.Add(this.UsersDGV);
+            this.UsersGB.Location = new System.Drawing.Point(12, 180);
+            this.UsersGB.Name = "UsersGB";
+            this.UsersGB.Size = new System.Drawing.Size(710, 393);
+            this.UsersGB.TabIndex = 1;
+            this.UsersGB.TabStop = false;
+            this.UsersGB.Text = "Usuarios";
             // 
-            // dataGridView1
+            // UsersDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UsersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UsersDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FirstName,
             this.LastName,
             this.FileNumber,
             this.Password,
             this.Active,
             this.Admin});
-            this.dataGridView1.Location = new System.Drawing.Point(9, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(695, 366);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.UsersDGV.Location = new System.Drawing.Point(9, 21);
+            this.UsersDGV.Name = "UsersDGV";
+            this.UsersDGV.RowHeadersWidth = 51;
+            this.UsersDGV.RowTemplate.Height = 24;
+            this.UsersDGV.Size = new System.Drawing.Size(695, 366);
+            this.UsersDGV.TabIndex = 0;
+            this.UsersDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // FilterGB
+            // 
+            this.FilterGB.Controls.Add(this.UserLastNameLabel);
+            this.FilterGB.Controls.Add(this.FirstNameLabel);
+            this.FilterGB.Controls.Add(this.UserLastName);
+            this.FilterGB.Controls.Add(this.UserFirstName);
+            this.FilterGB.Controls.Add(this.userType);
+            this.FilterGB.Controls.Add(this.CleanButton);
+            this.FilterGB.Controls.Add(this.ApplyButton);
+            this.FilterGB.Controls.Add(this.UserFileNumberLabel);
+            this.FilterGB.Controls.Add(this.userFileNumber);
+            this.FilterGB.Controls.Add(this.UserTypeLabel);
+            this.FilterGB.Controls.Add(this.userStateInactive);
+            this.FilterGB.Controls.Add(this.UserStateLabel);
+            this.FilterGB.Controls.Add(this.userStateActive);
+            this.FilterGB.Location = new System.Drawing.Point(12, 12);
+            this.FilterGB.Name = "FilterGB";
+            this.FilterGB.Size = new System.Drawing.Size(710, 162);
+            this.FilterGB.TabIndex = 2;
+            this.FilterGB.TabStop = false;
+            this.FilterGB.Text = "Filtros";
+            // 
+            // UserLastNameLabel
+            // 
+            this.UserLastNameLabel.AutoSize = true;
+            this.UserLastNameLabel.Location = new System.Drawing.Point(7, 138);
+            this.UserLastNameLabel.Name = "UserLastNameLabel";
+            this.UserLastNameLabel.Size = new System.Drawing.Size(62, 17);
+            this.UserLastNameLabel.TabIndex = 14;
+            this.UserLastNameLabel.Text = "Apellido:";
+            // 
+            // FirstNameLabel
+            // 
+            this.FirstNameLabel.AutoSize = true;
+            this.FirstNameLabel.Location = new System.Drawing.Point(7, 111);
+            this.FirstNameLabel.Name = "FirstNameLabel";
+            this.FirstNameLabel.Size = new System.Drawing.Size(62, 17);
+            this.FirstNameLabel.TabIndex = 13;
+            this.FirstNameLabel.Text = "Nombre:";
+            // 
+            // UserLastName
+            // 
+            this.UserLastName.Location = new System.Drawing.Point(75, 134);
+            this.UserLastName.Name = "UserLastName";
+            this.UserLastName.Size = new System.Drawing.Size(278, 22);
+            this.UserLastName.TabIndex = 12;
+            this.UserLastName.TextChanged += new System.EventHandler(this.UserLastName_TextChanged);
+            // 
+            // UserFirstName
+            // 
+            this.UserFirstName.Location = new System.Drawing.Point(75, 106);
+            this.UserFirstName.Name = "UserFirstName";
+            this.UserFirstName.Size = new System.Drawing.Size(278, 22);
+            this.UserFirstName.TabIndex = 11;
+            this.UserFirstName.TextChanged += new System.EventHandler(this.UserFirstName_TextChanged);
+            // 
+            // userType
+            // 
+            this.userType.FormattingEnabled = true;
+            this.userType.Location = new System.Drawing.Point(75, 48);
+            this.userType.Name = "userType";
+            this.userType.Size = new System.Drawing.Size(278, 24);
+            this.userType.TabIndex = 10;
+            // 
+            // CleanButton
+            // 
+            this.CleanButton.Location = new System.Drawing.Point(454, 134);
+            this.CleanButton.Name = "CleanButton";
+            this.CleanButton.Size = new System.Drawing.Size(122, 25);
+            this.CleanButton.TabIndex = 9;
+            this.CleanButton.Text = "Limpiar";
+            this.CleanButton.UseVisualStyleBackColor = true;
+            this.CleanButton.Click += new System.EventHandler(this.CleanButton_Click);
+            // 
+            // ApplyButton
+            // 
+            this.ApplyButton.Location = new System.Drawing.Point(582, 134);
+            this.ApplyButton.Name = "ApplyButton";
+            this.ApplyButton.Size = new System.Drawing.Size(122, 25);
+            this.ApplyButton.TabIndex = 3;
+            this.ApplyButton.Text = "Aplicar";
+            this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
+            // 
+            // UserFileNumberLabel
+            // 
+            this.UserFileNumberLabel.AutoSize = true;
+            this.UserFileNumberLabel.Location = new System.Drawing.Point(6, 81);
+            this.UserFileNumberLabel.Name = "UserFileNumberLabel";
+            this.UserFileNumberLabel.Size = new System.Drawing.Size(55, 17);
+            this.UserFileNumberLabel.TabIndex = 8;
+            this.UserFileNumberLabel.Text = "Legajo:";
+            // 
+            // userFileNumber
+            // 
+            this.userFileNumber.Location = new System.Drawing.Point(75, 78);
+            this.userFileNumber.Name = "userFileNumber";
+            this.userFileNumber.Size = new System.Drawing.Size(278, 22);
+            this.userFileNumber.TabIndex = 6;
+            this.userFileNumber.TextChanged += new System.EventHandler(this.UserFileNumber_TextChanged);
+            // 
+            // UserTypeLabel
+            // 
+            this.UserTypeLabel.AutoSize = true;
+            this.UserTypeLabel.Location = new System.Drawing.Point(6, 51);
+            this.UserTypeLabel.Name = "UserTypeLabel";
+            this.UserTypeLabel.Size = new System.Drawing.Size(40, 17);
+            this.UserTypeLabel.TabIndex = 7;
+            this.UserTypeLabel.Text = "Tipo:";
+            // 
+            // userStateInactive
+            // 
+            this.userStateInactive.AutoSize = true;
+            this.userStateInactive.Location = new System.Drawing.Point(148, 25);
+            this.userStateInactive.Name = "userStateInactive";
+            this.userStateInactive.Size = new System.Drawing.Size(77, 21);
+            this.userStateInactive.TabIndex = 6;
+            this.userStateInactive.TabStop = true;
+            this.userStateInactive.Text = "Inactivo";
+            this.userStateInactive.UseVisualStyleBackColor = true;
+            this.userStateInactive.CheckedChanged += new System.EventHandler(this.UserStateInactive_CheckedChanged);
+            // 
+            // UserStateLabel
+            // 
+            this.UserStateLabel.AutoSize = true;
+            this.UserStateLabel.Location = new System.Drawing.Point(6, 27);
+            this.UserStateLabel.Name = "UserStateLabel";
+            this.UserStateLabel.Size = new System.Drawing.Size(56, 17);
+            this.UserStateLabel.TabIndex = 5;
+            this.UserStateLabel.Text = "Estado:";
+            // 
+            // userStateActive
+            // 
+            this.userStateActive.AutoSize = true;
+            this.userStateActive.Location = new System.Drawing.Point(75, 25);
+            this.userStateActive.Name = "userStateActive";
+            this.userStateActive.Size = new System.Drawing.Size(67, 21);
+            this.userStateActive.TabIndex = 4;
+            this.userStateActive.TabStop = true;
+            this.userStateActive.Text = "Activo";
+            this.userStateActive.UseVisualStyleBackColor = true;
+            this.userStateActive.CheckedChanged += new System.EventHandler(this.UserStateActive_CheckedChanged);
+            // 
+            // AddUserButton
+            // 
+            this.AddUserButton.Location = new System.Drawing.Point(581, 579);
+            this.AddUserButton.Name = "AddUserButton";
+            this.AddUserButton.Size = new System.Drawing.Size(135, 25);
+            this.AddUserButton.TabIndex = 11;
+            this.AddUserButton.Text = "Agregar Usuario";
+            this.AddUserButton.UseVisualStyleBackColor = true;
+            this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
+            // 
+            // DeleteUserButton
+            // 
+            this.DeleteUserButton.Location = new System.Drawing.Point(440, 579);
+            this.DeleteUserButton.Name = "DeleteUserButton";
+            this.DeleteUserButton.Size = new System.Drawing.Size(135, 25);
+            this.DeleteUserButton.TabIndex = 12;
+            this.DeleteUserButton.Text = "Eliminar Usuario";
+            this.DeleteUserButton.UseVisualStyleBackColor = true;
+            this.DeleteUserButton.Click += new System.EventHandler(this.DeleteUserButton_Click);
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.Location = new System.Drawing.Point(21, 579);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(135, 25);
+            this.RefreshButton.TabIndex = 13;
+            this.RefreshButton.Text = "Refrescar";
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // FirstName
             // 
@@ -98,7 +276,7 @@
             // 
             // FileNumber
             // 
-            this.FileNumber.HeaderText = "legajo";
+            this.FileNumber.HeaderText = "Legajo";
             this.FileNumber.MinimumWidth = 6;
             this.FileNumber.Name = "FileNumber";
             this.FileNumber.ReadOnly = true;
@@ -127,165 +305,46 @@
             this.Admin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Admin.Width = 60;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.userType);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.userFileNumber);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.userStateInactive);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.userStateActive);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(710, 118);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Filtros";
-            // 
-            // userType
-            // 
-            this.userType.FormattingEnabled = true;
-            this.userType.Location = new System.Drawing.Point(68, 48);
-            this.userType.Name = "userType";
-            this.userType.Size = new System.Drawing.Size(278, 24);
-            this.userType.TabIndex = 10;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(582, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 25);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(582, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 25);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Aplicar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Legajo:";
-            // 
-            // userFileNumber
-            // 
-            this.userFileNumber.Location = new System.Drawing.Point(68, 78);
-            this.userFileNumber.Name = "userFileNumber";
-            this.userFileNumber.Size = new System.Drawing.Size(278, 22);
-            this.userFileNumber.TabIndex = 6;
-            this.userFileNumber.TextChanged += new System.EventHandler(this.UserFileNumber_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Tipo:";
-            // 
-            // userStateInactive
-            // 
-            this.userStateInactive.AutoSize = true;
-            this.userStateInactive.Location = new System.Drawing.Point(141, 25);
-            this.userStateInactive.Name = "userStateInactive";
-            this.userStateInactive.Size = new System.Drawing.Size(77, 21);
-            this.userStateInactive.TabIndex = 6;
-            this.userStateInactive.TabStop = true;
-            this.userStateInactive.Text = "Inactivo";
-            this.userStateInactive.UseVisualStyleBackColor = true;
-            this.userStateInactive.CheckedChanged += new System.EventHandler(this.UserStateInactive_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Estado:";
-            // 
-            // userStateActive
-            // 
-            this.userStateActive.AutoSize = true;
-            this.userStateActive.Location = new System.Drawing.Point(68, 25);
-            this.userStateActive.Name = "userStateActive";
-            this.userStateActive.Size = new System.Drawing.Size(67, 21);
-            this.userStateActive.TabIndex = 4;
-            this.userStateActive.TabStop = true;
-            this.userStateActive.Text = "Activo";
-            this.userStateActive.UseVisualStyleBackColor = true;
-            this.userStateActive.CheckedChanged += new System.EventHandler(this.UserStateActive_CheckedChanged);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(581, 545);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(135, 25);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Agregar Usuario";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(440, 545);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(135, 25);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Eliminar Usuario";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
-            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 583);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(739, 627);
+            this.Controls.Add(this.RefreshButton);
+            this.Controls.Add(this.DeleteUserButton);
+            this.Controls.Add(this.AddUserButton);
+            this.Controls.Add(this.FilterGB);
+            this.Controls.Add(this.UsersGB);
             this.Name = "Users";
             this.Text = "Administrar Usuarios";
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.UsersGB.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.UsersDGV)).EndInit();
+            this.FilterGB.ResumeLayout(false);
+            this.FilterGB.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox UsersGB;
+        private System.Windows.Forms.GroupBox FilterGB;
         private System.Windows.Forms.ComboBox userType;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button CleanButton;
+        private System.Windows.Forms.Button ApplyButton;
+        private System.Windows.Forms.Label UserFileNumberLabel;
         private System.Windows.Forms.TextBox userFileNumber;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label UserTypeLabel;
         private System.Windows.Forms.RadioButton userStateInactive;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label UserStateLabel;
         private System.Windows.Forms.RadioButton userStateActive;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button AddUserButton;
+        private System.Windows.Forms.Button DeleteUserButton;
+        private System.Windows.Forms.DataGridView UsersDGV;
+        private System.Windows.Forms.TextBox UserLastName;
+        private System.Windows.Forms.TextBox UserFirstName;
+        private System.Windows.Forms.Button RefreshButton;
+        private System.Windows.Forms.Label UserLastNameLabel;
+        private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn FileNumber;

@@ -25,20 +25,22 @@ namespace TriviaGUI
 
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void AddUserButton_Click(object sender, EventArgs e)
         {
             Register registerWindow = new Register(iUsersFacade);
             registerWindow.ShowDialog();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void ApplyButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void CleanButton_Click(object sender, EventArgs e)
         {
             userFileNumber.Clear();
+            UserFirstName.Clear();
+            UserLastName.Clear();
             userType.SelectedIndex = 0;
             userStateActive.Checked = false;
             userStateInactive.Checked = false;
@@ -59,7 +61,22 @@ namespace TriviaGUI
 
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void DeleteUserButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserLastName_TextChanged(object sender, EventArgs e)
         {
 
         }
