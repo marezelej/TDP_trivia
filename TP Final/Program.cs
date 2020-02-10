@@ -10,8 +10,6 @@ namespace TP_Final
 {
     class Program
     {
-        static CFachadaConjuntos iCConjuntos = new CFachadaConjuntos();
-        static CFachadaSesiones iCSesiones = new CFachadaSesiones();
         static void Main(string[] args)
         {
             Console.WriteLine("[INFO] Realizando migraciones...");
