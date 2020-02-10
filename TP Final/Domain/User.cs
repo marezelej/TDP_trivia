@@ -11,7 +11,7 @@ namespace TP_Final.Domain
     /// </summary>
     class User
     {
-        internal int Id { get; set; }
+        public int Id { get; set; }
         internal string FirstName { get; set; }
         internal string LastName { get; set; }
         internal string FileNumber { get; set; }

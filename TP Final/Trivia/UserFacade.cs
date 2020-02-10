@@ -23,6 +23,7 @@ namespace TP_Final.Trivia
         {
             var mConfiguration = new MapperConfiguration(pConfiguration =>
             {
+                pConfiguration.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
                 pConfiguration.CreateMap<User, UserDTO>();
             });
 
@@ -98,7 +99,7 @@ namespace TP_Final.Trivia
 
                     bUoW.Complete();
 
-                    cAuthenticatedUser = cMapper.Map<UserDTO>(bUser);
+                    cAuthenticatedUser = cMapper.Map<User, UserDTO>(bUser);
                     
                     return cAuthenticatedUser;
                 }
