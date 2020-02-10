@@ -94,6 +94,7 @@
     <Compile Include="Error\Authentication\NonAuthenticationException.cs" />
     <Compile Include="Error\Authentication\WrongPasswordException.cs" />
     <Compile Include="Error\Authentication\WrongFileNameException.cs" />
+    <Compile Include="Error\User\UserExistsException.cs" />
     <Compile Include="IO\DifficultyDTO.cs" />
     <Compile Include="IO\CategoryDTO.cs" />
     <Compile Include="IO\QuestionDTO.cs" />

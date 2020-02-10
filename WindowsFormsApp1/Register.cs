@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using TP_Final;
 using TP_Final.IO;
 using TP_Final.Contract;
+using TP_Final.Error.User;
 
 namespace TriviaGUI
 {
@@ -69,7 +70,7 @@ namespace TriviaGUI
         {
             UserDTO user = new UserDTO()
             {
-                FirstName        = txtFirstName.Text,
+                FirstName   = txtFirstName.Text,
                 LastName    = txtLastName.Text,
                 FileNumber  = txtFileNumber.Text,
                 Password    = txtPassword.Text
@@ -79,8 +80,19 @@ namespace TriviaGUI
             {
                 iUsersFacade.CreateUser(user);
             }
-            catch(Exception)
+            catch (UserExistsException)
             {
+                System.Windows.MessageBox.Show(
+                    "El usuario ingresado ya existe en el sistema. Solicite el cambio de contraseña a un administrador.",
+                    "Error de guardado",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+                return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
                 System.Windows.MessageBox.Show(
                     "Ocurrió un error inesperado al guardar el usuario. Por favor, reintentar...",
                     "Error inesperado",

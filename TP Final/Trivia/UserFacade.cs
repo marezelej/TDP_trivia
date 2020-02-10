@@ -9,6 +9,7 @@ using TP_Final.DAL;
 using TP_Final.DAL.EntityFramework;
 using TP_Final.Domain;
 using TP_Final.Error.Authentication;
+using TP_Final.Error.User;
 using TP_Final.IO;
 
 namespace TP_Final.Trivia
@@ -38,9 +39,18 @@ namespace TP_Final.Trivia
             {
                 using (IUnitOfWork bUoW = new UnitOfWork(bDbContext))
                 {
-                    User user = UserFacade.cMapper.Map<User>(pUser);
+                    if (bUoW.UserRepository.GetByFileNumber(pUser.FileNumber) != null)
+                        throw new UserExistsException();
 
-                    bUoW.UserRepository.Add(user);
+                    User bUser = new User()
+                    {
+                        FirstName = pUser.FirstName,
+                        LastName = pUser.LastName,
+                        FileNumber = pUser.FileNumber,
+                        Password = pUser.Password
+                    };
+
+                    bUoW.UserRepository.Add(bUser);
 
                     bUoW.Complete();
                 }
