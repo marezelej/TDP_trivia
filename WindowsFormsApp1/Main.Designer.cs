@@ -31,7 +31,6 @@
             this.btnNewTest = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mCreateUser = new System.Windows.Forms.ToolStripMenuItem();
             this.mUsers = new System.Windows.Forms.ToolStripMenuItem();
             this.mChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,19 +78,11 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mCreateUser,
             this.mUsers,
             this.mChangePassword});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
-            // 
-            // mCreateUser
-            // 
-            this.mCreateUser.Name = "mCreateUser";
-            this.mCreateUser.Size = new System.Drawing.Size(226, 26);
-            this.mCreateUser.Text = "Nuevo";
-            this.mCreateUser.Click += new System.EventHandler(this.MCreateUser_Click);
             // 
             // mUsers
             // 
@@ -120,13 +111,13 @@
             this.mOpentDB.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mOpentDBAdmin});
             this.mOpentDB.Name = "mOpentDB";
-            this.mOpentDB.Size = new System.Drawing.Size(224, 26);
+            this.mOpentDB.Size = new System.Drawing.Size(153, 26);
             this.mOpentDB.Text = "OpentDB";
             // 
             // mOpentDBAdmin
             // 
             this.mOpentDBAdmin.Name = "mOpentDBAdmin";
-            this.mOpentDBAdmin.Size = new System.Drawing.Size(224, 26);
+            this.mOpentDBAdmin.Size = new System.Drawing.Size(169, 26);
             this.mOpentDBAdmin.Text = "Administrar";
             // 
             // sesionesToolStripMenuItem
@@ -141,14 +132,14 @@
             // mSessionRanking
             // 
             this.mSessionRanking.Name = "mSessionRanking";
-            this.mSessionRanking.Size = new System.Drawing.Size(224, 26);
+            this.mSessionRanking.Size = new System.Drawing.Size(174, 26);
             this.mSessionRanking.Text = "Ranking";
             this.mSessionRanking.Click += new System.EventHandler(this.MSessionRanking_Click);
             // 
             // mMySessions
             // 
             this.mMySessions.Name = "mMySessions";
-            this.mMySessions.Size = new System.Drawing.Size(224, 26);
+            this.mMySessions.Size = new System.Drawing.Size(174, 26);
             this.mMySessions.Text = "Mis sesiones";
             this.mMySessions.Click += new System.EventHandler(this.MMySessions_Click);
             // 
@@ -266,7 +257,6 @@
         private System.Windows.Forms.Button btnNewTest;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mCreateUser;
         private System.Windows.Forms.ToolStripMenuItem mUsers;
         private System.Windows.Forms.ToolStripMenuItem mChangePassword;
         private System.Windows.Forms.Button btnLogOut;
