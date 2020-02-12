@@ -99,5 +99,21 @@ namespace TriviaGUI
             Users users = new Users();
             users.ShowDialog();
         }
+
+        private void MOpentDBAdmin_Click(object sender, EventArgs e)
+        {
+            Questions questions = new Questions();
+            questions.ShowDialog();
+        }
+
+        private void ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

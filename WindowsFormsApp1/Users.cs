@@ -80,5 +80,10 @@ namespace TriviaGUI
         {
 
         }
+
+        private void Users_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

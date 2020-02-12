@@ -54,9 +54,10 @@
             // btnNewTest
             // 
             this.btnNewTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewTest.Location = new System.Drawing.Point(310, 168);
+            this.btnNewTest.Location = new System.Drawing.Point(232, 136);
+            this.btnNewTest.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewTest.Name = "btnNewTest";
-            this.btnNewTest.Size = new System.Drawing.Size(207, 38);
+            this.btnNewTest.Size = new System.Drawing.Size(155, 31);
             this.btnNewTest.TabIndex = 1;
             this.btnNewTest.Text = "Iniciar Examen";
             this.btnNewTest.UseVisualStyleBackColor = true;
@@ -71,9 +72,11 @@
             this.sesionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(529, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(397, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -81,20 +84,20 @@
             this.mUsers,
             this.mChangePassword});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // mUsers
             // 
             this.mUsers.Name = "mUsers";
-            this.mUsers.Size = new System.Drawing.Size(226, 26);
+            this.mUsers.Size = new System.Drawing.Size(182, 22);
             this.mUsers.Text = "Administrar";
             this.mUsers.Click += new System.EventHandler(this.MUsers_Click);
             // 
             // mChangePassword
             // 
             this.mChangePassword.Name = "mChangePassword";
-            this.mChangePassword.Size = new System.Drawing.Size(226, 26);
+            this.mChangePassword.Size = new System.Drawing.Size(182, 22);
             this.mChangePassword.Text = "Cambiar Contraseña";
             this.mChangePassword.Click += new System.EventHandler(this.MChangePassword_Click);
             // 
@@ -103,22 +106,24 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mOpentDB});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(88, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(72, 20);
             this.toolStripMenuItem1.Text = "Preguntas";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
             // 
             // mOpentDB
             // 
             this.mOpentDB.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mOpentDBAdmin});
             this.mOpentDB.Name = "mOpentDB";
-            this.mOpentDB.Size = new System.Drawing.Size(153, 26);
+            this.mOpentDB.Size = new System.Drawing.Size(122, 22);
             this.mOpentDB.Text = "OpentDB";
             // 
             // mOpentDBAdmin
             // 
             this.mOpentDBAdmin.Name = "mOpentDBAdmin";
-            this.mOpentDBAdmin.Size = new System.Drawing.Size(169, 26);
+            this.mOpentDBAdmin.Size = new System.Drawing.Size(136, 22);
             this.mOpentDBAdmin.Text = "Administrar";
+            this.mOpentDBAdmin.Click += new System.EventHandler(this.MOpentDBAdmin_Click);
             // 
             // sesionesToolStripMenuItem
             // 
@@ -126,29 +131,30 @@
             this.mSessionRanking,
             this.mMySessions});
             this.sesionesToolStripMenuItem.Name = "sesionesToolStripMenuItem";
-            this.sesionesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.sesionesToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.sesionesToolStripMenuItem.Text = "Sesiones";
             // 
             // mSessionRanking
             // 
             this.mSessionRanking.Name = "mSessionRanking";
-            this.mSessionRanking.Size = new System.Drawing.Size(174, 26);
+            this.mSessionRanking.Size = new System.Drawing.Size(140, 22);
             this.mSessionRanking.Text = "Ranking";
             this.mSessionRanking.Click += new System.EventHandler(this.MSessionRanking_Click);
             // 
             // mMySessions
             // 
             this.mMySessions.Name = "mMySessions";
-            this.mMySessions.Size = new System.Drawing.Size(174, 26);
+            this.mMySessions.Size = new System.Drawing.Size(140, 22);
             this.mMySessions.Text = "Mis sesiones";
             this.mMySessions.Click += new System.EventHandler(this.MMySessions_Click);
             // 
             // btnLogOut
             // 
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(20, 168);
+            this.btnLogOut.Location = new System.Drawing.Point(15, 136);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(207, 38);
+            this.btnLogOut.Size = new System.Drawing.Size(155, 31);
             this.btnLogOut.TabIndex = 4;
             this.btnLogOut.Text = "Cerrar Sesión";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -158,9 +164,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 28);
+            this.label1.Location = new System.Drawing.Point(4, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 20);
+            this.label1.Size = new System.Drawing.Size(98, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Mejor puntaje:";
             // 
@@ -173,9 +180,11 @@
             this.userData.Controls.Add(this.lBestScore);
             this.userData.Controls.Add(this.label1);
             this.userData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userData.Location = new System.Drawing.Point(20, 42);
+            this.userData.Location = new System.Drawing.Point(15, 34);
+            this.userData.Margin = new System.Windows.Forms.Padding(2);
             this.userData.Name = "userData";
-            this.userData.Size = new System.Drawing.Size(497, 112);
+            this.userData.Padding = new System.Windows.Forms.Padding(2);
+            this.userData.Size = new System.Drawing.Size(373, 91);
             this.userData.TabIndex = 6;
             this.userData.TabStop = false;
             this.userData.Text = "Martín Lejman";
@@ -185,9 +194,10 @@
             // 
             this.lBestTime.AutoSize = true;
             this.lBestTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBestTime.Location = new System.Drawing.Point(205, 80);
+            this.lBestTime.Location = new System.Drawing.Point(154, 65);
+            this.lBestTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lBestTime.Name = "lBestTime";
-            this.lBestTime.Size = new System.Drawing.Size(104, 20);
+            this.lBestTime.Size = new System.Drawing.Size(90, 17);
             this.lBestTime.TabIndex = 10;
             this.lBestTime.Text = "26 segundos";
             // 
@@ -195,9 +205,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 80);
+            this.label6.Location = new System.Drawing.Point(4, 65);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 20);
+            this.label6.Size = new System.Drawing.Size(59, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "Tiempo:";
             // 
@@ -205,9 +216,10 @@
             // 
             this.lBestQuantity.AutoSize = true;
             this.lBestQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBestQuantity.Location = new System.Drawing.Point(205, 54);
+            this.lBestQuantity.Location = new System.Drawing.Point(154, 44);
+            this.lBestQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lBestQuantity.Name = "lBestQuantity";
-            this.lBestQuantity.Size = new System.Drawing.Size(106, 20);
+            this.lBestQuantity.Size = new System.Drawing.Size(92, 17);
             this.lBestQuantity.TabIndex = 8;
             this.lBestQuantity.Text = "10 preguntas";
             // 
@@ -215,9 +227,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 54);
+            this.label4.Location = new System.Drawing.Point(4, 44);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 20);
+            this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Cantidad:";
             // 
@@ -225,22 +238,24 @@
             // 
             this.lBestScore.AutoSize = true;
             this.lBestScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBestScore.Location = new System.Drawing.Point(205, 28);
+            this.lBestScore.Location = new System.Drawing.Point(154, 23);
+            this.lBestScore.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lBestScore.Name = "lBestScore";
-            this.lBestScore.Size = new System.Drawing.Size(91, 20);
+            this.lBestScore.Size = new System.Drawing.Size(79, 17);
             this.lBestScore.TabIndex = 6;
             this.lBestScore.Text = "200 puntos";
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 218);
+            this.ClientSize = new System.Drawing.Size(397, 177);
             this.Controls.Add(this.userData);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnNewTest);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Trivia";
             this.Load += new System.EventHandler(this.Main_Load);
