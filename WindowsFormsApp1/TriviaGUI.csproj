@@ -106,6 +106,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImportQuestions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportQuestions.Designer.cs">
+      <DependentUpon>ImportQuestions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Questions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     <Compile Include="Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ImportQuestions.resx">
+      <DependentUpon>ImportQuestions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>

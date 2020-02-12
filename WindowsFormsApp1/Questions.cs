@@ -61,5 +61,16 @@ namespace TriviaGUI
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ImportQuestions importQuestions = new ImportQuestions();
+            importQuestions.ShowDialog();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
