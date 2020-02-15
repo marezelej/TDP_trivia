@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract\ISessionFacade.cs" />
     <Compile Include="Contract\IUserFacade.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\AnswerMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\QuestionMap.cs" />

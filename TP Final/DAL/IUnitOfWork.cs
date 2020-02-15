@@ -17,6 +17,11 @@ namespace TP_Final.DAL
         IUserRepository UserRepository { get; }
 
         /// <summary>
+        /// El repositorio de sesiones
+        /// </summary>
+        ISessionRepository SessionRepository { get; }
+
+        /// <summary>
         /// Completa la transacción
         /// </summary>
         void Complete();

@@ -19,5 +19,13 @@ namespace TP_Final.DAL.EntityFramework
         {
 
         }
+
+        public Session GetBestSession(int pUserId)
+        {
+            return  iDbContext.Sessions.
+                Where(pSession => pSession.User.Id == pUserId).
+                OrderByDescending(pSession => pSession.Score).
+                FirstOrDefault();
+        }
     }
 }

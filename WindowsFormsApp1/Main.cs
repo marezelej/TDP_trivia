@@ -41,10 +41,19 @@ namespace TriviaGUI
             UserDTO user = iUsersFacade.GetAuthenticatedUser();
             SessionDTO bestSesssion = iSessionsFacade.GetBestSession(user.Id);
 
-            userData.Text       = $"{user.FirstName} {user.LastName}";
-            lBestScore.Text     = $"{bestSesssion.Score} puntos";
-            lBestTime.Text      = $"{bestSesssion.Time.Minutes} minutos, {bestSesssion.Time.Seconds} segundos";
-            lBestQuantity.Text  = $"{bestSesssion.Quantity} preguntas";
+            userData.Text = $"{user.FirstName} {user.LastName}";
+
+            if (bestSesssion != null)
+            {
+                lBestScore.Text = $"{bestSesssion.Score} puntos";
+                lBestTime.Text = $"{bestSesssion.Time.Minutes} minutos, {bestSesssion.Time.Seconds} segundos";
+                lBestQuantity.Text = $"{bestSesssion.Quantity} preguntas";
+            } else
+            {
+                lBestScore.Text = $"-";
+                lBestTime.Text = $"-";
+                lBestQuantity.Text = $"-";
+            }
 
             CenterToScreen();
         }

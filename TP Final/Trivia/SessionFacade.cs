@@ -1,29 +1,52 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TP_Final.Contract;
+using TP_Final.DAL;
+using TP_Final.DAL.EntityFramework;
+using TP_Final.Domain;
 using TP_Final.IO;
 
 namespace TP_Final
 {
-    public class SessionFacade
+    public class SessionFacade : ISessionFacade
     {
+        private static readonly IMapper cMapper;
+
+        static SessionFacade()
+        {
+            var mConfiguration = new MapperConfiguration(pConfiguration =>
+            {
+                pConfiguration.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
+                pConfiguration.CreateMap<Session, SessionDTO>();
+                pConfiguration.CreateMap<SessionDTO, Session>();
+            });
+
+            cMapper = mConfiguration.CreateMapper();
+        }
+
         /// <summary>
         /// Obtiene la mejor sesion del usuario pasado
         /// </summary>
         /// <param name="pUserId">El id del usuario buscado</param>
-        /// <returns>La mejor sesión del usuario</returns>
+        /// <returns>La mejor sesión del usuario o null si el usuario no posee sesiones</returns>
         public SessionDTO GetBestSession(int pUserId)
         {
-            return new SessionDTO()
+            using (var bDbContext = new TriviaDbContext())
             {
-                Id = 1,
-                UserId = pUserId,
-                Quantity = 10,
-                Score = 100,
-                Time = new TimeSpan(0, 10, 15)
-            };
+                using (IUnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+
+                    Session bBestSession = bUoW.SessionRepository.GetBestSession(pUserId);
+
+                    bUoW.Complete();
+
+                    return cMapper.Map<SessionDTO>(bBestSession);
+                }
+            }
         }
 
         public IList<SetDTO> GetAvailableSets()

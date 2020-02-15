@@ -41,6 +41,11 @@ namespace TP_Final.DAL.EntityFramework
         /// </summary>
         public IDbSet<User> Users { get; set; }
 
+        /// <summary>
+        /// El conjunto de sesiones
+        /// </summary>
+        public IDbSet<Session> Sessions { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder pModelBuilder)
         {
             pModelBuilder.Configurations.AddFromAssembly(System.Reflection.Assembly.GetExecutingAssembly());
