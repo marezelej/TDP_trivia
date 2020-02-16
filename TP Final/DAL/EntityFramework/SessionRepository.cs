@@ -20,6 +20,11 @@ namespace TP_Final.DAL.EntityFramework
 
         }
 
+        /// <summary>
+        /// Devuelve la mejor sesión del usuario
+        /// </summary>
+        /// <param name="pUserId">El ID del usuario</param>
+        /// <returns>La mejor sesión o null si el usuario no tiene sesiones</returns>
         public Session GetBestSession(int pUserId)
         {
             return  iDbContext.Sessions.
