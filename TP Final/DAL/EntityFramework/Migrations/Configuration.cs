@@ -49,14 +49,14 @@ namespace TP_Final.DAL.EntityFramework.Migrations
 
         private void SeedOpentdb(TriviaDbContext pContext)
         {
-            Set bOpentdbSet = new Set()
+            QuestionsSet bOpentdbSet = new QuestionsSet()
             {
                 Id = 1,
                 Name = "Open Trivia DB"
             };
 
-            if (pContext.Set<Set>().Find(bOpentdbSet.Id) == null)
-                pContext.Set<Set>().Add(bOpentdbSet);
+            if (pContext.Set<QuestionsSet>().Find(bOpentdbSet.Id) == null)
+                pContext.Set<QuestionsSet>().Add(bOpentdbSet);
 
             IList<Category> bOpentdbCategories = new List<Category>()
             {
