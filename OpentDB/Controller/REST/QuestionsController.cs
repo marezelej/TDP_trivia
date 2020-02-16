@@ -1,25 +1,30 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using OpentDB.Contract;
+using OpentDB.Request;
+using OpentDB.Response;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web;
-using Newtonsoft.Json;
-using opentdbAPI.Response;
+using System.Threading.Tasks;
 
-namespace opentdbAPI
+namespace OpentDB.Controller
 {
-    internal class OpentbController : IController
+    public class QuestionsController : IQuestionsController
     {
         string iUrl = "https://opentdb.com/api.php";
 
-         GetQuestionsResponse IController.GetQuestions(GetQuestionRequest pRequest)
+        public GetQuestionsResponse GetQuestions(GetQuestionsRequest pRequest)
         {
-            GetQuestionsResponse response;
             System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             // Se crea el request http
             HttpWebRequest mRequest = (HttpWebRequest)WebRequest.Create(iUrl);
 
+
+            GetQuestionsResponse response = new GetQuestionsResponse();
             try
             {
                 // Se ejecuta la consulta
@@ -41,6 +46,7 @@ namespace opentdbAPI
                     StreamReader mReader = new StreamReader(mResponseStream, Encoding.GetEncoding("utf-8"));
                     string mErrorText = mReader.ReadToEnd();
 
+                    response.Error = mErrorText;
                 }
             }
             catch (Exception ex)
