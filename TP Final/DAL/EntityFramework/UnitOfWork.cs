@@ -26,6 +26,11 @@ namespace TP_Final.DAL.EntityFramework
         public ISessionRepository SessionRepository { get; private set; }
 
         /// <summary>
+        /// El repositorio de conjuntos de preguntas
+        /// </summary>
+        public IQuestionsSetRepository QuestionsSetRepository { get; private set; }
+
+        /// <summary>
         /// Construye la UnitOfWork para el DbContext dado
         /// </summary>
         /// <param name="pDbContext">El DbContext a utilizar</param>
@@ -39,6 +44,7 @@ namespace TP_Final.DAL.EntityFramework
             this.iDbContext = pDbContext;
             this.UserRepository = new UserRepository(pDbContext);
             this.SessionRepository = new SessionRepository(pDbContext);
+            this.QuestionsSetRepository = new QuestionsSetRepository(pDbContext);
         }
 
         /// <summary>

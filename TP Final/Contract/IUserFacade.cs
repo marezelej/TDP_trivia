@@ -11,7 +11,7 @@ namespace TP_Final.Contract
     /// Se encarga de administrar los usuarios del sistema.
     /// Permite el ABM, así como tambien autenticar usuarios y cambiar contraseñas.
     /// </summary>
-    public interface IUserFacade
+    public interface IUserController
     {
         /// <summary>
         /// Crea un nuevo usuario en el sistema

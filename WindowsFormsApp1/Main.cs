@@ -11,17 +11,18 @@ using System.Windows.Forms;
 using TP_Final;
 using TP_Final.IO;
 using TP_Final.Contract;
+using TP_Final.Controller;
 
 namespace TriviaGUI
 {
     public partial class Main : Form
     {
-        IUserFacade iUsersFacade;
-        SessionFacade iSessionsFacade = new SessionFacade();
+        IUserController iUserController;
+        ISessionController iSessionController = new SessionController();
 
-        public Main(IUserFacade pUsersFacade)
+        public Main(IUserController pUserController)
         {
-            iUsersFacade = pUsersFacade;
+            iUserController = pUserController;
             InitializeComponent();
         }
 
@@ -32,14 +33,14 @@ namespace TriviaGUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            NewTest testWindow = new NewTest();
+            NewTest testWindow = new NewTest(iUserController.GetAuthenticatedUser());
             testWindow.ShowDialog();
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-            UserDTO user = iUsersFacade.GetAuthenticatedUser();
-            SessionDTO bestSesssion = iSessionsFacade.GetBestSession(user.Id);
+            UserDTO user = iUserController.GetAuthenticatedUser();
+            SessionDTO bestSesssion = iSessionController.GetBestSession(user.Id);
 
             userData.Text = $"{user.FirstName} {user.LastName}";
 
@@ -69,7 +70,7 @@ namespace TriviaGUI
 
             if (result == MessageBoxResult.Yes)
             {
-                iUsersFacade.LogOutAuthenticatedUser();
+                iUserController.LogOutAuthenticatedUser();
                 this.Close();
             }
         }
@@ -99,7 +100,7 @@ namespace TriviaGUI
 
         private void MCreateUser_Click(object sender, EventArgs e)
         {
-            Register register = new Register(iUsersFacade);
+            Register register = new Register(iUserController);
             register.ShowDialog();
         }
 

@@ -9,22 +9,30 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using TP_Final;
+using TP_Final.Contract;
 using TP_Final.IO;
+using TP_Final.Controller;
 
 namespace TriviaGUI
 {
     public partial class NewTest : Form
     {
-        private SessionFacade iSessionsController = new SessionFacade();
+        private UserDTO iAuthenticatedUser;
+        private IQuestionsSetController iQuestionsSetController = new QuestionsSetController();
 
-        public NewTest()
+        public NewTest(UserDTO pAuthenticatedUser)
         {
+            iAuthenticatedUser = pAuthenticatedUser;
             InitializeComponent();
         }
 
         private void NewTest_Load(object sender, EventArgs e)
         {
             CenterToScreen();
+
+            IEnumerable<QuestionsSetDTO> bQuestionsSets = iQuestionsSetController.GetAll();
+
+            comboSets.Items.AddRange(bQuestionsSets.ToArray());
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

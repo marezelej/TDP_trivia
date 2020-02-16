@@ -10,13 +10,13 @@ using TP_Final.DAL.EntityFramework;
 using TP_Final.Domain;
 using TP_Final.IO;
 
-namespace TP_Final
+namespace TP_Final.Controller
 {
-    public class SessionFacade : ISessionFacade
+    public class SessionController : ISessionController
     {
         private static readonly IMapper cMapper;
 
-        static SessionFacade()
+        static SessionController()
         {
             var mConfiguration = new MapperConfiguration(pConfiguration =>
             {

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TP_Final.Contract
 {
-    public interface ISetController
+    public interface IQuestionsSetController
     {
+        IEnumerable<QuestionsSetDTO> GetAll();
     }
 }

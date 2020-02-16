@@ -59,7 +59,7 @@
     <Compile Include="Contract\ISessionFacade.cs" />
     <Compile Include="Contract\ISetController.cs" />
     <Compile Include="Contract\IUserFacade.cs" />
-    <Compile Include="Controller\SetController.cs" />
+    <Compile Include="Controller\QuestionsSetController.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\AnswerMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\QuestionMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\DifficultyMap.cs" />
@@ -69,11 +69,13 @@
     <Compile Include="DAL\EntityFramework\Mapping\QuestionsSetMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\UserMap.cs" />
     <Compile Include="DAL\EntityFramework\Migrations\Configuration.cs" />
+    <Compile Include="DAL\EntityFramework\QuestionsSetRepository.cs" />
     <Compile Include="DAL\EntityFramework\Repository.cs" />
     <Compile Include="DAL\EntityFramework\SessionRepository.cs" />
     <Compile Include="DAL\EntityFramework\TriviaDbContext.cs" />
     <Compile Include="DAL\EntityFramework\UnitOfWork.cs" />
     <Compile Include="DAL\EntityFramework\UserRepository.cs" />
+    <Compile Include="DAL\IQuestionsSetRepository.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\ISessionRepository.cs" />
     <Compile Include="DAL\IUnitOfWork.cs" />
@@ -100,9 +102,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IO\SessionDTO.cs" />
-    <Compile Include="Trivia\SessionFacade.cs" />
+    <Compile Include="Controller\SessionController.cs" />
     <Compile Include="IO\QuestionsSetDTO.cs" />
-    <Compile Include="Trivia\UserFacade.cs" />
+    <Compile Include="Controller\UserController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -110,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\OpentDB\" />
+    <Folder Include="Trivia\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

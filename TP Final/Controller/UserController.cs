@@ -12,14 +12,14 @@ using TP_Final.Error.Authentication;
 using TP_Final.Error.User;
 using TP_Final.IO;
 
-namespace TP_Final.Trivia
+namespace TP_Final.Controller
 {
-    public class UserFacade: IUserFacade
+    public class UserController: IUserController
     {
         private static readonly IMapper cMapper;
         private static UserDTO cAuthenticatedUser;
 
-        static UserFacade()
+        static UserController()
         {
             var mConfiguration = new MapperConfiguration(pConfiguration =>
             {

@@ -2,14 +2,14 @@
 using System.Windows;
 using System.Windows.Forms;
 using TP_Final.Contract;
-using TP_Final.Trivia;
+using TP_Final.Controller;
 using TP_Final.Error.Authentication;
 
 namespace TriviaGUI
 {
     public partial class LogIn : Form
     {
-        IUserFacade iUsersFacade = new UserFacade();
+        IUserController iUsersFacade = new UserController();
 
         public LogIn()
         {

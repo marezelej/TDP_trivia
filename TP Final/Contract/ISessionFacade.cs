@@ -10,7 +10,7 @@ namespace TP_Final.Contract
     /// <summary>
     /// Una fachada de sesión, con los métodos para AB
     /// </summary>
-    public interface ISessionFacade
+    public interface ISessionController
     {
         /// <summary>
         /// Devuelve la mejor sesión del usuario

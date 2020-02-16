@@ -52,7 +52,8 @@ namespace TP_Final.DAL.EntityFramework.Migrations
             QuestionsSet bOpentdbSet = new QuestionsSet()
             {
                 Id = 1,
-                Name = "Open Trivia DB"
+                Name = "Open Trivia DB",
+                MaxQuantity = 20
             };
 
             if (pContext.Set<QuestionsSet>().Find(bOpentdbSet.Id) == null)

@@ -22,6 +22,11 @@ namespace TP_Final.DAL
         ISessionRepository SessionRepository { get; }
 
         /// <summary>
+        /// El repositorio de conjuntos de preguntas
+        /// </summary>
+        IQuestionsSetRepository QuestionsSetRepository { get; }
+
+        /// <summary>
         /// Completa la transacción
         /// </summary>
         void Complete();

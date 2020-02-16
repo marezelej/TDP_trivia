@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TP_Final.DAL.EntityFramework;
-using TP_Final.Trivia;
+using TP_Final.Controller;
 
 namespace TP_Final
 {

@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TP_Final.Contract;
-using TP_Final.Trivia;
+using TP_Final.Controller;
 using System.Windows.Forms;
 
 namespace TriviaGUI
 {
     public partial class Users : Form
     {
-        IUserFacade iUsersFacade = new UserFacade();
+        IUserController iUsersFacade = new UserController();
         public Users()
         {
             InitializeComponent();

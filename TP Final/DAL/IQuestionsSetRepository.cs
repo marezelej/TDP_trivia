@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Contract;
 using TP_Final.Domain;
 
-namespace TP_Final.Controller
+namespace TP_Final.DAL
 {
-    public class SetController : ISetController
+    interface IQuestionsSetRepository : IRepository<QuestionsSet>
     {
-        public IEnumerable<QuestionsSet> 
     }
 }
