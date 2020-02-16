@@ -12,11 +12,13 @@ using TP_Final;
 using TP_Final.Contract;
 using TP_Final.IO;
 using TP_Final.Controller;
+using TriviaGUI.Modal;
 
 namespace TriviaGUI
 {
     public partial class NewTest : Form
     {
+        static int cDefaultQuantity = 10;
         private UserDTO iAuthenticatedUser;
         private IQuestionsSetController iQuestionsSetController = new QuestionsSetController();
 
@@ -26,13 +28,26 @@ namespace TriviaGUI
             InitializeComponent();
         }
 
-        private void NewTest_Load(object sender, EventArgs e)
+        private void NewTest_Load(object sender, EventArgs eventArgs)
         {
             CenterToScreen();
 
-            IEnumerable<QuestionsSetDTO> bQuestionsSets = iQuestionsSetController.GetAll();
+            try
+            {
+                IEnumerable<QuestionsSetDTO> bQuestionsSets = iQuestionsSetController.GetAll();
+                comboSets.Items.AddRange(bQuestionsSets.ToArray());
+                if (bQuestionsSets.Count() == 1)
+                {
+                    comboSets.SelectedIndex = 0;
+                }
+            } catch(Exception e)
+            {
+                Console.WriteLine(e);
+                ErrorModal.Show("Ocurrió un error obteniendo los conjuntos de preguntas. Por favor, reintentar...");
+                Close();
+                return;
+            }
 
-            comboSets.Items.AddRange(bQuestionsSets.ToArray());
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -69,9 +84,16 @@ namespace TriviaGUI
             Close();
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboSets_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboCategory.Items.Clear();
+            comboDifficulty.Items.Clear();
 
+            QuestionsSetDTO bSelectedSet = comboSets.SelectedItem as QuestionsSetDTO;
+
+            comboCategory.Items.AddRange(bSelectedSet.Categories.ToArray());
+            comboDifficulty.Items.AddRange(bSelectedSet.Difficulties.ToArray());
+            numQuantity.Value = cDefaultQuantity;
         }
     }
 }

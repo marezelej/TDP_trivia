@@ -112,6 +112,7 @@
     <Compile Include="ImportQuestions.Designer.cs">
       <DependentUpon>ImportQuestions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modal\ErrorModal.cs" />
     <Compile Include="Questions.cs">
       <SubType>Form</SubType>
     </Compile>

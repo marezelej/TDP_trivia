@@ -39,9 +39,11 @@ namespace TP_Final.Controller
                 {
                     IEnumerable<QuestionsSet> bSetList = bUoW.QuestionsSetRepository.GetAll();
 
+                    IEnumerable<QuestionsSetDTO> bResult = cMapper.Map<IEnumerable<QuestionsSetDTO>>(bSetList);
+
                     bUoW.Complete();
 
-                    return cMapper.Map<IEnumerable<QuestionsSetDTO>>(bSetList);
+                    return bResult;
                 }
             }
         }
