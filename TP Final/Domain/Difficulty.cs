@@ -8,6 +8,6 @@
         internal int Id { get; set; }
         internal string Description { get; set; }
         internal float Weight { get; set; }
-        internal Set Set { get; set; }
+        internal QuestionsSet Set { get; set; }
     }
 }

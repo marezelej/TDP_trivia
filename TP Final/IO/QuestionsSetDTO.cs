@@ -3,7 +3,7 @@ using TP_Final.IO;
 
 namespace TP_Final
 {
-    public class SetDTO
+    public class QuestionsSetDTO
     {
         public int Id { get; internal set; }
         public string Name { get; internal set; }

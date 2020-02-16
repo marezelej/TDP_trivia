@@ -8,9 +8,9 @@ using TP_Final.Domain;
 
 namespace TP_Final.DAL.EntityFramework.Mapping
 {
-    class SetMap : EntityTypeConfiguration<Set>
+    class QuestionsSetMap : EntityTypeConfiguration<QuestionsSet>
     {
-        public SetMap()
+        public QuestionsSetMap()
         {
             HasKey(pSet => pSet.Id);
 
@@ -19,6 +19,9 @@ namespace TP_Final.DAL.EntityFramework.Mapping
 
             Property(pSet => pSet.Name)
                 .HasMaxLength(30)
+                .IsRequired();
+
+            Property(pSet => pSet.MaxQuantity)
                 .IsRequired();
         }
     }

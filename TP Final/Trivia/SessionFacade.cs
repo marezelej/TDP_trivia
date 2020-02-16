@@ -49,11 +49,11 @@ namespace TP_Final
             }
         }
 
-        public IList<SetDTO> GetAvailableSets()
+        public IList<QuestionsSetDTO> GetAvailableSets()
         {
-            return new List<SetDTO>()
+            return new List<QuestionsSetDTO>()
             {
-                new SetDTO()
+                new QuestionsSetDTO()
                 {
                     Id              = 1,
                     Name            = "OpentDB",

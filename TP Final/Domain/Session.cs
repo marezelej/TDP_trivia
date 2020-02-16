@@ -13,7 +13,7 @@ namespace TP_Final.Domain
         internal int Quantity { get; set; }
         internal TimeSpan Time { get; set; }
         internal User User { get; set; }
-        internal Set Set { get; set; }
+        internal QuestionsSet Set { get; set; }
         internal Category Category { get; set; }
         internal Difficulty Difficulty { get; set; }
         internal IList<SessionQuestion> Questions { get; set; }

@@ -9,7 +9,7 @@ namespace TP_Final.Domain
     {
         internal int Id { get; set; }
         internal string Description { get; set; }
-        internal Set Set { get; set; }
+        internal QuestionsSet Set { get; set; }
         internal Category Category { get; set; }
         internal Difficulty Difficulty { get; set; }
         internal IList<Answer> Answers { get; set; }

@@ -13,6 +13,6 @@ namespace TP_Final.Domain
     {
         internal int Id { get; set; }
         internal string Name { get; set; }
-        internal Set Set { get; set; }
+        internal QuestionsSet Set { get; set; }
     }
 }

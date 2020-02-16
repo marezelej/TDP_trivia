@@ -57,14 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contract\ISessionFacade.cs" />
+    <Compile Include="Contract\ISetController.cs" />
     <Compile Include="Contract\IUserFacade.cs" />
+    <Compile Include="Controller\SetController.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\AnswerMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\QuestionMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\DifficultyMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\SessionQuestionMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\SessionMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\CategoryMap.cs" />
-    <Compile Include="DAL\EntityFramework\Mapping\SetMap.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\QuestionsSetMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\UserMap.cs" />
     <Compile Include="DAL\EntityFramework\Migrations\Configuration.cs" />
     <Compile Include="DAL\EntityFramework\Repository.cs" />
@@ -82,7 +84,7 @@
     <Compile Include="Domain\Question.cs" />
     <Compile Include="Domain\SessionQuestion.cs" />
     <Compile Include="Domain\Session.cs" />
-    <Compile Include="Domain\Set.cs" />
+    <Compile Include="Domain\QuestionsSet.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Domain\UserAction.cs" />
     <Compile Include="Domain\UserRole.cs" />
@@ -99,7 +101,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IO\SessionDTO.cs" />
     <Compile Include="Trivia\SessionFacade.cs" />
-    <Compile Include="IO\SetDTO.cs" />
+    <Compile Include="IO\QuestionsSetDTO.cs" />
     <Compile Include="Trivia\UserFacade.cs" />
   </ItemGroup>
   <ItemGroup>
