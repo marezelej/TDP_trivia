@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
-using TP_Final;
-using TP_Final.IO;
-using TP_Final.Contract;
-using TP_Final.Controller;
+using TriviaGame;
+using TriviaGame.IO;
+using TriviaGame.Contract;
+using TriviaGame.Controller;
 
 namespace TriviaGUI
 {

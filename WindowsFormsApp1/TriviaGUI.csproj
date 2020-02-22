@@ -233,9 +233,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TP Final\TP Final.csproj">
+    <ProjectReference Include="..\TP Final\TriviaGame.csproj">
       <Project>{E6FC7A65-8250-4116-84A7-90F113AB1CB5}</Project>
-      <Name>TP Final</Name>
+      <Name>TriviaGame</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

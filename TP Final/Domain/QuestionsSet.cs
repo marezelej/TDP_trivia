@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 
-namespace TP_Final.Domain
+namespace TriviaGame.Domain
 {
     /// <summary>
     /// Un conjunto de preguntas
     /// </summary>
-    internal class QuestionsSet
+    public class QuestionsSet
     {
-        internal int Id { get; set; }
-        internal string Name { get; set; }
-        internal int MaxQuantity { get; set; }
-        internal IList<Category> Categories { get; set; }
-        internal IList<Difficulty> Difficulties { get; set; }
-        internal IList<Question> Questions { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int MaxQuantity { get; set; }
+        public virtual IList<Category> Categories { get; set; }
+        public virtual IList<Difficulty> Difficulties { get; set; }
+        public IList<Question> Questions { get; set; }
     }
 }

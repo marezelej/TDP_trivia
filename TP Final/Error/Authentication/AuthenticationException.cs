@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Final.Error.Authentication
+namespace TriviaGame.Error.Authentication
 {
     public abstract class AuthenticationException : Exception
     {

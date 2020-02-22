@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Final.Domain
+namespace TriviaGame.Domain
 {
     /// <summary>
     /// Una categoría de preguntas
     /// </summary>
-    class Category
+    public class Category
     {
-        internal int Id { get; set; }
-        internal string Name { get; set; }
-        internal QuestionsSet Set { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

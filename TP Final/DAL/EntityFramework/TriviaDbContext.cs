@@ -5,10 +5,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Domain;
-using TP_Final.DAL.EntityFramework.Migrations;
+using TriviaGame.Domain;
+using TriviaGame.DAL.EntityFramework.Migrations;
 
-namespace TP_Final.DAL.EntityFramework
+namespace TriviaGame.DAL.EntityFramework
 {
     class TriviaDbContext : DbContext
     {
@@ -45,6 +45,11 @@ namespace TP_Final.DAL.EntityFramework
         /// El conjunto de sesiones
         /// </summary>
         public IDbSet<Session> Sessions { get; set; }
+
+        /// <summary>
+        /// El conjunto de conjuntos de preguntas
+        /// </summary>
+        public IDbSet<QuestionsSet> QuestionsSets { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder pModelBuilder)
         {

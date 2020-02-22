@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Final.DAL.EntityFramework
+namespace TriviaGame.DAL.EntityFramework
 {
     /// <summary>
     /// Un repositorio de entidades de clase TEntity implementado utilizando entity framework

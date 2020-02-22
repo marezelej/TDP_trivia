@@ -4,9 +4,9 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Domain;
+using TriviaGame.Domain;
 
-namespace TP_Final.DAL.EntityFramework.Migrations
+namespace TriviaGame.DAL.EntityFramework.Migrations
 {
     internal sealed class Configuration : DbMigrationsConfiguration<TriviaDbContext>
     {
@@ -56,70 +56,50 @@ namespace TP_Final.DAL.EntityFramework.Migrations
                 MaxQuantity = 20
             };
 
-            if (pContext.Set<QuestionsSet>().Find(bOpentdbSet.Id) == null)
-                pContext.Set<QuestionsSet>().Add(bOpentdbSet);
-
-            IList<Category> bOpentdbCategories = new List<Category>()
+            bOpentdbSet.Categories = new List<Category>()
             {
                 new Category()
                     {
                         Id = 1,
-                        Name = "General Knowledge",
-                        Set = bOpentdbSet
+                        Name = "General Knowledge"
                     },
                     new Category()
                     {
                         Id = 2,
-                        Name = "Entertainment: Books",
-                        Set = bOpentdbSet
+                        Name = "Entertainment: Books"
                     }
             };
 
-            foreach (Category bCategory in bOpentdbCategories)
-            {
-                if (pContext.Set<Category>().Find(bCategory.Id) == null)
-                    pContext.Set<Category>().Add(bCategory);
-            }
-
-            IList<Difficulty> bOpentdbDifficulties = new List<Difficulty>()
+            bOpentdbSet.Difficulties = new List<Difficulty>()
             {
                 new Difficulty()
                 {
                     Id = 1,
                     Description = "Easy",
-                    Weight = 1,
-                    Set = bOpentdbSet
+                    Weight = 1
                 },
                 new Difficulty()
                 {
                     Id = 2,
                     Description = "Medium",
-                    Weight = 2,
-                    Set = bOpentdbSet
+                    Weight = 2
                 },
                 new Difficulty()
                 {
                     Id = 3,
                     Description = "Hard",
-                    Weight = 3,
-                    Set = bOpentdbSet
+                    Weight = 3
                 }
             };
 
-            foreach (Difficulty bDifficulty in bOpentdbDifficulties)
-            {
-                if (pContext.Set<Difficulty>().Find(bDifficulty.Id) == null)
-                    pContext.Set<Difficulty>().Add(bDifficulty);
-            }
-
-            IList<Question> bOpentdbQuestions = new List<Question>()
+            bOpentdbSet.Questions = new List<Question>()
             {
                 new Question()
                 {
                     Id = 1,
                     Description = "What was the destination of the missing flight MH370?",
-                    Category = bOpentdbCategories[0],
-                    Difficulty = bOpentdbDifficulties[1],
+                    Category = bOpentdbSet.Categories[0],
+                    Difficulty = bOpentdbSet.Difficulties[1],
                     Set = bOpentdbSet,
                     Answers = new List<Answer>()
                     {
@@ -149,8 +129,8 @@ namespace TP_Final.DAL.EntityFramework.Migrations
                 {
                     Id = 2,
                     Description = "Which of the following card games revolves around numbers and basic math?",
-                    Category = bOpentdbCategories[0],
-                    Difficulty = bOpentdbDifficulties[0],
+                    Category = bOpentdbSet.Categories[0],
+                    Difficulty = bOpentdbSet.Difficulties[0],
                     Set = bOpentdbSet,
                     Answers = new List<Answer>()
                     {
@@ -180,8 +160,8 @@ namespace TP_Final.DAL.EntityFramework.Migrations
                 {
                     Id = 3,
                     Description = "Who wrote the 1967 horror novel 'Rosemary´s Baby'?",
-                    Category = bOpentdbCategories[1],
-                    Difficulty = bOpentdbDifficulties[0],
+                    Category = bOpentdbSet.Categories[1],
+                    Difficulty = bOpentdbSet.Difficulties[0],
                     Set = bOpentdbSet,
                     Answers = new List<Answer>()
                     {
@@ -211,8 +191,8 @@ namespace TP_Final.DAL.EntityFramework.Migrations
                 {
                     Id = 4,
                     Description = "What's the second book in George R. R. Martin's 'A Song of Ice and Fire' series?",
-                    Category = bOpentdbCategories[1],
-                    Difficulty = bOpentdbDifficulties[1],
+                    Category = bOpentdbSet.Categories[1],
+                    Difficulty = bOpentdbSet.Difficulties[1],
                     Set = bOpentdbSet,
                     Answers = new List<Answer>()
                     {
@@ -240,11 +220,8 @@ namespace TP_Final.DAL.EntityFramework.Migrations
                 }
             };
 
-            foreach (Question bQuestion in bOpentdbQuestions)
-            {
-                if (pContext.Set<Question>().Find(bQuestion.Id) == null)
-                    pContext.Set<Question>().Add(bQuestion);
-            }
+            if (pContext.Set<QuestionsSet>().Find(bOpentdbSet.Id) == null)
+                pContext.Set<QuestionsSet>().Add(bOpentdbSet);
         }
     }
 }

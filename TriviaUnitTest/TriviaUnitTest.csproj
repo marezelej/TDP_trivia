@@ -63,6 +63,7 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\QuestionsSetControllerTest.cs" />
     <Compile Include="DAL\EntityFramework\QuestionsSetRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,9 +72,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TP Final\TP Final.csproj">
-      <Project>{E6FC7A65-8250-4116-84A7-90F113AB1CB5}</Project>
-      <Name>TP Final</Name>
+    <ProjectReference Include="..\TP Final\TriviaGame.csproj">
+      <Project>{e6fc7a65-8250-4116-84a7-90f113ab1cb5}</Project>
+      <Name>TriviaGame</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

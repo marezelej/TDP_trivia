@@ -50,7 +50,7 @@
             this.comboSets.DisplayMember = "Name";
             this.comboSets.FormattingEnabled = true;
             this.comboSets.Location = new System.Drawing.Point(98, 24);
-            this.comboSets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboSets.Margin = new System.Windows.Forms.Padding(2);
             this.comboSets.Name = "comboSets";
             this.comboSets.Size = new System.Drawing.Size(211, 25);
             this.comboSets.TabIndex = 0;
@@ -69,7 +69,7 @@
             // numQuantity
             // 
             this.numQuantity.Location = new System.Drawing.Point(105, 84);
-            this.numQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.numQuantity.Minimum = new decimal(new int[] {
             10,
             0,
@@ -86,9 +86,10 @@
             // 
             // comboCategory
             // 
+            this.comboCategory.DisplayMember = "Name";
             this.comboCategory.FormattingEnabled = true;
             this.comboCategory.Location = new System.Drawing.Point(105, 26);
-            this.comboCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboCategory.Margin = new System.Windows.Forms.Padding(2);
             this.comboCategory.Name = "comboCategory";
             this.comboCategory.Size = new System.Drawing.Size(204, 25);
             this.comboCategory.TabIndex = 3;
@@ -125,9 +126,10 @@
             // 
             // comboDifficulty
             // 
+            this.comboDifficulty.DisplayMember = "Description";
             this.comboDifficulty.FormattingEnabled = true;
             this.comboDifficulty.Location = new System.Drawing.Point(105, 54);
-            this.comboDifficulty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboDifficulty.Margin = new System.Windows.Forms.Padding(2);
             this.comboDifficulty.Name = "comboDifficulty";
             this.comboDifficulty.Size = new System.Drawing.Size(204, 25);
             this.comboDifficulty.TabIndex = 7;
@@ -138,9 +140,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(335, 56);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
@@ -156,9 +158,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(9, 71);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(335, 132);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
@@ -168,7 +170,7 @@
             // 
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(9, 208);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(335, 42);
             this.btnStart.TabIndex = 10;
@@ -180,7 +182,7 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(9, 255);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(335, 40);
             this.btnCancel.TabIndex = 11;
@@ -197,7 +199,7 @@
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewTest";
             this.Text = "Iniciar Trivia";
             this.Load += new System.EventHandler(this.NewTest_Load);

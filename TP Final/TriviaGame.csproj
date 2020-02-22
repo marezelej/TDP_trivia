@@ -5,18 +5,19 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B313D179-855D-40B7-B36E-011BA110D739}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Modelo</RootNamespace>
-    <AssemblyName>Modelo</AssemblyName>
+    <ProjectGuid>{E6FC7A65-8250-4116-84A7-90F113AB1CB5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TP_Final</RootNamespace>
+    <AssemblyName>TP Final</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,6 +27,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -51,12 +56,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Contract\ISessionFacade.cs" />
+    <Compile Include="Contract\ISetController.cs" />
+    <Compile Include="Contract\IUserFacade.cs" />
+    <Compile Include="Controller\QuestionsSetController.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\AnswerMap.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\QuestionMap.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\DifficultyMap.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\SessionQuestionMap.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\SessionMap.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\CategoryMap.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\QuestionsSetMap.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\UserMap.cs" />
+    <Compile Include="DAL\EntityFramework\Migrations\Configuration.cs" />
+    <Compile Include="DAL\EntityFramework\QuestionsSetRepository.cs" />
+    <Compile Include="DAL\EntityFramework\Repository.cs" />
+    <Compile Include="DAL\EntityFramework\SessionRepository.cs" />
+    <Compile Include="DAL\EntityFramework\TriviaDbContext.cs" />
+    <Compile Include="DAL\EntityFramework\UnitOfWork.cs" />
+    <Compile Include="DAL\EntityFramework\UserRepository.cs" />
+    <Compile Include="DAL\IQuestionsSetRepository.cs" />
+    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\ISessionRepository.cs" />
+    <Compile Include="DAL\IUnitOfWork.cs" />
+    <Compile Include="DAL\IUserRepository.cs" />
+    <Compile Include="Domain\Answer.cs" />
+    <Compile Include="Domain\Category.cs" />
+    <Compile Include="Domain\Difficulty.cs" />
+    <Compile Include="Domain\Question.cs" />
+    <Compile Include="Domain\SessionQuestion.cs" />
+    <Compile Include="Domain\Session.cs" />
+    <Compile Include="Domain\QuestionsSet.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Error\Authentication\AuthenticationException.cs" />
+    <Compile Include="Error\Authentication\NonAuthenticationException.cs" />
+    <Compile Include="Error\Authentication\WrongPasswordException.cs" />
+    <Compile Include="Error\Authentication\WrongFileNameException.cs" />
+    <Compile Include="Error\User\UserExistsException.cs" />
+    <Compile Include="IO\DifficultyDTO.cs" />
+    <Compile Include="IO\CategoryDTO.cs" />
+    <Compile Include="IO\QuestionDTO.cs" />
+    <Compile Include="IO\UserDTO.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IO\SessionDTO.cs" />
+    <Compile Include="Controller\SessionController.cs" />
+    <Compile Include="IO\QuestionsSetDTO.cs" />
+    <Compile Include="Controller\UserController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\OpentDB\" />
+    <Folder Include="Trivia\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

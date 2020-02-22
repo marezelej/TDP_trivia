@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Domain;
+using TriviaGame.Domain;
 
-namespace TP_Final.DAL.EntityFramework
+namespace TriviaGame.DAL.EntityFramework
 {
     /// <summary>
     /// Un repositorio de sesiones implementado en EntityFramework

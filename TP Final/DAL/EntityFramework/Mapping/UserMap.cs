@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Domain;
+using TriviaGame.Domain;
 
-namespace TP_Final.DAL.EntityFramework.Mapping
+namespace TriviaGame.DAL.EntityFramework.Mapping
 {
     class UserMap : EntityTypeConfiguration<User>
     {
@@ -17,23 +17,23 @@ namespace TP_Final.DAL.EntityFramework.Mapping
             Property(pUser => pUser.Id)
                 .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
-            this.Property(pUser => pUser.FileNumber)
+            Property(pUser => pUser.FileNumber)
                 .HasMaxLength(10)
                 .IsRequired();
 
-            this.Property(pUser => pUser.FirstName)
+            Property(pUser => pUser.FirstName)
                 .HasMaxLength(30)
                 .IsRequired();
 
-            this.Property(pUser => pUser.LastName)
+            Property(pUser => pUser.LastName)
                 .HasMaxLength(30)
                 .IsRequired();
 
-            this.Property(pUser => pUser.Password)
+            Property(pUser => pUser.Password)
                 .HasMaxLength(30)
                 .IsRequired();
 
-            this.Property(pUser => pUser.IsAdmin)
+            Property(pUser => pUser.IsAdmin)
                 .IsRequired();
         }
     }

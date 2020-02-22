@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.IO;
+using TriviaGame.IO;
 
-namespace TP_Final.Contract
+namespace TriviaGame.Contract
 {
     /// <summary>
     /// Una fachada de sesión, con los métodos para AB

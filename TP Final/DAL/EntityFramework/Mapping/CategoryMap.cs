@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Domain;
+using TriviaGame.Domain;
 
-namespace TP_Final.DAL.EntityFramework.Mapping
+namespace TriviaGame.DAL.EntityFramework.Mapping
 {
     class CategoryMap : EntityTypeConfiguration<Category>
     {
@@ -20,10 +20,6 @@ namespace TP_Final.DAL.EntityFramework.Mapping
             Property(pCategory => pCategory.Name)
                 .HasMaxLength(30)
                 .IsRequired();
-
-            HasRequired(pCategory => pCategory.Set)
-                .WithMany()
-                .WillCascadeOnDelete(false);
         }
     }
 }

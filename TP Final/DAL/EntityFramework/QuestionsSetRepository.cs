@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Domain;
+using TriviaGame.Domain;
+using System.Data.Entity;
 
-namespace TP_Final.DAL.EntityFramework
+namespace TriviaGame.DAL.EntityFramework
 {
     class QuestionsSetRepository : Repository<QuestionsSet, TriviaDbContext>, IQuestionsSetRepository
     {
@@ -15,6 +16,14 @@ namespace TP_Final.DAL.EntityFramework
         public QuestionsSetRepository(TriviaDbContext pDbContext) : base(pDbContext)
         {
 
+        }
+
+        public IEnumerable<QuestionsSet> GetAllWithCategoryAndDifficulty()
+        {
+            return iDbContext.QuestionsSets
+                .Include(pSet => pSet.Categories)
+                .Include(pSet => pSet.Categories)
+                .ToArray();
         }
     }
 }

@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Final.Domain
+namespace TriviaGame.Domain
 {
     /// <summary>
     /// Un usuario del sistema
     /// </summary>
-    class User
+    public class User
     {
         public int Id { get; set; }
-        internal string FirstName { get; set; }
-        internal string LastName { get; set; }
-        internal string FileNumber { get; set; }
-        internal string Password { get; set; }
-        internal IList<Session> Sessions { get; set; }
-        internal bool IsAdmin { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string FileNumber { get; set; }
+        public string Password { get; set; }
+        public bool IsAdmin { get; set; }
+        public IList<Session> Sessions { get; set; }
     }
 }

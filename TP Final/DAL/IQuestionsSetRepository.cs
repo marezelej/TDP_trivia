@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Domain;
+using TriviaGame.Domain;
 
-namespace TP_Final.DAL
+namespace TriviaGame.DAL
 {
     interface IQuestionsSetRepository : IRepository<QuestionsSet>
     {
+        IEnumerable<QuestionsSet> GetAllWithCategoryAndDifficulty();
     }
 }

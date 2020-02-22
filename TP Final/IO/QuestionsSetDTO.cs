@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using TP_Final.IO;
+using TriviaGame.IO;
 
-namespace TP_Final
+namespace TriviaGame
 {
     public class QuestionsSetDTO
     {

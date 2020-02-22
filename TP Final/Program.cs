@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.DAL.EntityFramework;
-using TP_Final.Controller;
+using TriviaGame.DAL.EntityFramework;
+using TriviaGame.Controller;
 
-namespace TP_Final
+namespace TriviaGame
 {
     class Program
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Final.DAL
+namespace TriviaGame.DAL
 {
     /// <summary>
     /// Representa un repositorio de entidades de clase TEntity

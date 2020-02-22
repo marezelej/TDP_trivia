@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
-using TP_Final;
-using TP_Final.Contract;
-using TP_Final.IO;
-using TP_Final.Controller;
+using TriviaGame;
+using TriviaGame.Contract;
+using TriviaGame.IO;
+using TriviaGame.Controller;
 using TriviaGUI.Modal;
 
 namespace TriviaGUI
@@ -93,7 +93,14 @@ namespace TriviaGUI
 
             comboCategory.Items.AddRange(bSelectedSet.Categories.ToArray());
             comboDifficulty.Items.AddRange(bSelectedSet.Difficulties.ToArray());
+
             numQuantity.Value = cDefaultQuantity;
+
+            if (bSelectedSet.Categories.Count() > 0)
+                comboCategory.SelectedIndex = 0;
+
+            if (bSelectedSet.Difficulties.Count() > 0)
+                comboDifficulty.SelectedIndex = 0;
         }
     }
 }

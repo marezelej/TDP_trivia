@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Domain;
+using TriviaGame.Domain;
 
-namespace TP_Final.DAL.EntityFramework.Mapping
+namespace TriviaGame.DAL.EntityFramework.Mapping
 {
     class AnswerMap : EntityTypeConfiguration<Answer>
     {
@@ -23,10 +23,6 @@ namespace TP_Final.DAL.EntityFramework.Mapping
 
             Property(pAnswer => pAnswer.IsCorrect)
                 .IsRequired();
-
-            HasRequired(pAnswer => pAnswer.Question)
-                .WithMany()
-                .WillCascadeOnDelete(false);
         }
     }
 }

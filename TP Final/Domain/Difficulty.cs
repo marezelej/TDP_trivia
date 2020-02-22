@@ -1,13 +1,12 @@
-﻿namespace TP_Final.Domain
+﻿namespace TriviaGame.Domain
 {
     /// <summary>
     /// Una dificultad de preguntas
     /// </summary>
-    internal class Difficulty
+    public class Difficulty
     {
-        internal int Id { get; set; }
-        internal string Description { get; set; }
-        internal float Weight { get; set; }
-        internal QuestionsSet Set { get; set; }
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public float Weight { get; set; }
     }
 }

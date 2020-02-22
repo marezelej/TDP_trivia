@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Contract;
-using TP_Final.DAL;
-using TP_Final.DAL.EntityFramework;
-using TP_Final.Domain;
-using TP_Final.IO;
+using TriviaGame.Contract;
+using TriviaGame.DAL;
+using TriviaGame.DAL.EntityFramework;
+using TriviaGame.Domain;
+using TriviaGame.IO;
 
-namespace TP_Final.Controller
+namespace TriviaGame.Controller
 {
     public class SessionController : ISessionController
     {

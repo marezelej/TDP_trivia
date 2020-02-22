@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TP_Final.Domain
+namespace TriviaGame.Domain
 {
     /// <summary>
     /// Una sesión de preguntas
     /// </summary>
-    internal class Session
+    public class Session
     {
-        internal int Id { get; set; }
-        internal int Score { get; set; }
-        internal int Quantity { get; set; }
-        internal TimeSpan Time { get; set; }
-        internal User User { get; set; }
-        internal QuestionsSet Set { get; set; }
-        internal Category Category { get; set; }
-        internal Difficulty Difficulty { get; set; }
-        internal IList<SessionQuestion> Questions { get; set; }
+        public int Id { get; set; }
+        public int Score { get; set; }
+        public int Quantity { get; set; }
+        public TimeSpan Time { get; set; }
+        public virtual User User { get; set; }
+        public virtual QuestionsSet Set { get; set; }
+        public virtual Category Category { get; set; }
+        public virtual Difficulty Difficulty { get; set; }
+        public virtual IList<SessionQuestion> Questions { get; set; }
     }
 }

@@ -6,8 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP_Final.Contract;
-using TP_Final.Controller;
+using TriviaGame.Contract;
+using TriviaGame.Controller;
 using System.Windows.Forms;
 
 namespace TriviaGUI

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Final.DAL.EntityFramework
+namespace TriviaGame.DAL.EntityFramework
 {
     /// <summary>
     /// Una UnitOfWork para entity fraemwork

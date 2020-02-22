@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Forms;
-using TP_Final.Contract;
-using TP_Final.Controller;
-using TP_Final.Error.Authentication;
+using TriviaGame.Contract;
+using TriviaGame.Controller;
+using TriviaGame.Error.Authentication;
 
 namespace TriviaGUI
 {

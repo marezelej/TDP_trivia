@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Final.DAL
+namespace TriviaGame.DAL
 {
     /// <summary>
     /// Representa una UnitOfWork para trabajar de manera transaccional con la base de datos

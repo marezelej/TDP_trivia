@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TP_Final.Error.User
+namespace TriviaGame.Error.User
 {
     public class UserExistsException : Exception
     {
