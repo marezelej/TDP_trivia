@@ -8,8 +8,16 @@ using System.Threading.Tasks;
 
 namespace OpentDB.Controller
 {
-    interface IQuestionsController
+    /// <summary>
+    /// Un controlador de preguntas
+    /// </summary>
+    internal interface IQuestionsController
     {
-        GetQuestionsResponse GetQuestions(GetQuestionsRequest pRequest);
+        /// <summary>
+        /// Devuelve las preguntas para una peticion dada
+        /// </summary>
+        /// <param name="pRequest">La peticion</param>
+        /// <returns>Las preguntas obtenidas</returns>
+        IGetQuestionsResponse GetQuestions(GetQuestionsRequest pRequest);
     }
 }

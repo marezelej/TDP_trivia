@@ -2,5 +2,10 @@
 {
     public enum QuestionDifficulty
     {
+
+        Any,
+        easy,
+        medium,
+        hard
     }
 }

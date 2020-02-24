@@ -8,9 +8,29 @@ using System.Collections.Generic;
 
 namespace OpentDB.API
 {
+    /// <summary>
+    /// Una API de OpentDB que utiliza un controlador REST para comunicarse (por defecto)
+    /// </summary>
     public class OpentDBAPI : IOpentDBAPI
     {
         private IQuestionsController iController = new QuestionsController();
+
+        /// <summary>
+        /// Constructor publico
+        /// </summary>
+        public OpentDBAPI()
+        {
+
+        }
+
+        /// <summary>
+        /// Used for unit testing, allows changing the controller
+        /// </summary>
+        /// <param name="pController">The controller to use</param>
+        internal OpentDBAPI(IQuestionsController pController)
+        {
+            iController = pController;
+        }
 
         /// <summary>
         /// Obtiene una lista de preguntas
@@ -20,11 +40,16 @@ namespace OpentDB.API
         /// <param name="pDifficulty">La dificultad de las preguntas</param>
         /// <param name="pType">El tipo de las preguntas</param>
         /// <returns>Una lista con las preguntas obtenidas</returns>
-        public IEnumerable<QuestionDTO> GetQuestionsList(int pNumber, QuestionCategory pCategory, QuestionDifficulty pDifficulty, QuestionType pType)
+        public IEnumerable<IQuestion> GetQuestionsList(int pNumber, QuestionCategory pCategory, QuestionDifficulty pDifficulty, QuestionType pType)
         {
             GetQuestionsRequest request = new GetQuestionsRequest();
 
-            GetQuestionsResponse response = iController.GetQuestions(request);
+            request.Quantity = pNumber;
+            request.Category = pCategory;
+            request.Difficulty = pDifficulty;
+            request.Type = pType;
+
+            IGetQuestionsResponse response = iController.GetQuestions(request);
 
             if(response.HasError())
             {

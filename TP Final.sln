@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpentDB", "OpentDB\OpentDB.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriviaUnitTest", "TriviaUnitTest\TriviaUnitTest.csproj", "{39A3724E-6B9D-4E96-88CB-20A21461200A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpentDBTest", "OpentDBTest\OpentDBTest.csproj", "{6F69274B-4F67-410C-96CB-909FAF80462F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{39A3724E-6B9D-4E96-88CB-20A21461200A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39A3724E-6B9D-4E96-88CB-20A21461200A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39A3724E-6B9D-4E96-88CB-20A21461200A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F69274B-4F67-410C-96CB-909FAF80462F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F69274B-4F67-410C-96CB-909FAF80462F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F69274B-4F67-410C-96CB-909FAF80462F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F69274B-4F67-410C-96CB-909FAF80462F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

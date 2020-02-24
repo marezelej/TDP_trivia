@@ -8,8 +8,7 @@ namespace TriviaGame.IO
 {
     public class QuestionDTO
     {
-        public string Question { get; }
-        public IList<string> Answers { get; }
-        public int CorrectAnswerPosition { get; }
+        public string Question { get; set; }
+        public IList<AnswerDTO> Answers { get; set; }
     }
 }

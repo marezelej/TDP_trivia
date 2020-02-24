@@ -1,7 +1,11 @@
 ﻿using Newtonsoft.Json;
-using OpentDB.Contract;
+using OpentDB.Controller.REST.Service;
+using OpentDB.Controller.REST.Service.Error;
+using OpentDB.Controller.REST.Service.NET;
+using OpentDB.IO;
 using OpentDB.Request;
 using OpentDB.Response;
+using OpentDB.Response.REST;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,52 +13,85 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace OpentDB.Controller
 {
-    public class QuestionsController : IQuestionsController
+    internal class QuestionsController : IQuestionsController
     {
-        string iUrl = "https://opentdb.com/api.php";
+        IWebService iWebService = new WebService();
+        string iUrl = "https://opentdb.com/api.php?";
 
-        public GetQuestionsResponse GetQuestions(GetQuestionsRequest pRequest)
+        /// <summary>
+        /// Constructor sin parametros
+        /// </summary>
+        internal QuestionsController()
         {
-            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            // Se crea el request http
-            HttpWebRequest mRequest = (HttpWebRequest)WebRequest.Create(iUrl);
+        }
+
+        /// <summary>
+        /// Constructor que permite definir el servicio que realizara las peticiones HTTP
+        /// </summary>
+        /// <param name="pService">El servicio a utilizar</param>
+        internal QuestionsController(IWebService pService)
+        {
+            iWebService = pService;
+        }
+
+        /// <summary>
+        /// Realiza una peticion HTTP al servidor de opentdb con la informacion de pRequest
+        /// y devuelve la respuesta obtenida
+        /// </summary>
+        /// <param name="pRequest">La peticion a realizar</param>
+        /// <returns>La respuesta obtenida</returns>
+        public IGetQuestionsResponse GetQuestions(GetQuestionsRequest pRequest)
+        {
+            string bEndpoint = iUrl;
+
+            bEndpoint += $"&amount={pRequest.Quantity}";
+
+            if (pRequest.Category != IO.QuestionCategory.Any)
+                bEndpoint += $"&category={pRequest.Category}";
+
+            if (pRequest.Difficulty != IO.QuestionDifficulty.Any)
+                bEndpoint += $"&category={pRequest.Difficulty.ToString()}";
+
+            if(pRequest.Type != QuestionType.Any)
+                bEndpoint += $"&type={pRequest.Type.ToString()}";
 
 
-            GetQuestionsResponse response = new GetQuestionsResponse();
+
+            GetQuestionsResponse bResponse = new GetQuestionsResponse();
             try
             {
-                // Se ejecuta la consulta
-                WebResponse mResponse = mRequest.GetResponse();
-
-                // Se obtiene los datos de respuesta
-                using (Stream responseStream = mResponse.GetResponseStream())
-                {
-                    StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
-
-                    response = JsonConvert.DeserializeObject<GetQuestionsResponse>(reader.ReadToEnd());
-                }
+                string bContent = iWebService.Get(bEndpoint);
+                bResponse = JsonConvert.DeserializeObject<GetQuestionsResponse>(bContent);
+                Decode(bResponse);
             }
-            catch (WebException ex)
+            catch (CommunicationException e)
             {
-                WebResponse mErrorResponse = ex.Response;
-                using (Stream mResponseStream = mErrorResponse.GetResponseStream())
-                {
-                    StreamReader mReader = new StreamReader(mResponseStream, Encoding.GetEncoding("utf-8"));
-                    string mErrorText = mReader.ReadToEnd();
-
-                    response.Error = mErrorText;
-                }
+                bResponse.Error = $"Error de comunicacion con el servidor: '{e.Message}'";
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                response.Error = ex.Message;
+                bResponse.Error = $"Error inesperado: '{e.Message}'";
             }
 
-            return response;
+            return bResponse;
+        }
+
+        private void Decode(GetQuestionsResponse pResponse)
+        {
+            if (pResponse.ResponseCode != 0)
+                return;
+
+            foreach(QuestionDTO bQUestion in pResponse.Questions)
+            {
+                bQUestion.Question = HttpUtility.HtmlDecode(bQUestion.Question);
+                bQUestion.CorrectAnswer = HttpUtility.HtmlDecode(bQUestion.CorrectAnswer);
+                bQUestion.IncorrectAnswers.Cast<string>().ToList().ConvertAll(b => HttpUtility.HtmlDecode(b));
+            }
         }
     }
 }

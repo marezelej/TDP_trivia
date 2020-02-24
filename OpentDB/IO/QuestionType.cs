@@ -2,5 +2,8 @@
 {
     public enum QuestionType
     {
+        Any,
+        multiple,
+        boolean
     }
 }

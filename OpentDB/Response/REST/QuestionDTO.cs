@@ -1,25 +1,24 @@
 ﻿using Newtonsoft.Json;
+using OpentDB.IO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace OpentDB.IO
+namespace OpentDB.Response.REST
 {
-    public class QuestionDTO
+    public class QuestionDTO: IQuestion
     {
         [JsonProperty("question")]
         public string Question { get; internal set; }
 
         [JsonProperty("category")]
-        public string Category { get; internal set; }
+        [JsonConverter(typeof(QuestionCategoryConverter))]
+        public QuestionCategory Category { get; internal set; }
 
         [JsonProperty("type")]
         public string Type { get; internal set; }
 
         [JsonProperty("difficulty")]
-        public string Difficulty { get; internal set; }
+        public QuestionDifficulty Difficulty { get; internal set; }
 
         [JsonProperty("correct_answer")]
         public string CorrectAnswer { get; internal set; }

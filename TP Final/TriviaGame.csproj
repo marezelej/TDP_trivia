@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E6FC7A65-8250-4116-84A7-90F113AB1CB5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TP_Final</RootNamespace>
-    <AssemblyName>TP Final</AssemblyName>
+    <RootNamespace>TriviaGame</RootNamespace>
+    <AssemblyName>TriviaGame</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract\IImportQuestionsService.cs" />
     <Compile Include="Contract\ISessionFacade.cs" />
     <Compile Include="Contract\ISetController.cs" />
     <Compile Include="Contract\IUserFacade.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Error\Authentication\WrongPasswordException.cs" />
     <Compile Include="Error\Authentication\WrongFileNameException.cs" />
     <Compile Include="Error\User\UserExistsException.cs" />
+    <Compile Include="IO\AnswerDTO.cs" />
     <Compile Include="IO\DifficultyDTO.cs" />
     <Compile Include="IO\CategoryDTO.cs" />
     <Compile Include="IO\QuestionDTO.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="Controller\SessionController.cs" />
     <Compile Include="IO\QuestionsSetDTO.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Service\Importation\ImportQuestionsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
