@@ -5,6 +5,7 @@ using TriviaGame.IO;
 using OpentDB.Contract;
 using OpentDB.IO;
 using OpentDB.API;
+using TriviaGame.Domain;
 
 namespace QuestionsAdapters.Adapter
 {
@@ -89,6 +90,25 @@ namespace QuestionsAdapters.Adapter
             }
 
             return bQuestion;
+        }
+
+        /// <summary>
+        /// Devuelve el set de preguntas de OpentDB
+        /// </summary>
+        /// <returns>El set de preguntas de OpentDB</returns>
+        public QuestionsSet GetSet()
+        {
+            QuestionsSet bSet = new QuestionsSet()
+            {
+                Name = "Open Trivia DB",
+                Categories = new List<Category>(),
+                Difficulties = new List<Difficulty>(),
+                Adapter = typeof(OpentDBAdapter)
+            };
+
+            Enum.GetValues(typeof(QuestionCategory));
+
+            return bSet;
         }
     }
 }

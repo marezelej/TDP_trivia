@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TriviaGame.Domain
 {
@@ -13,5 +14,6 @@ namespace TriviaGame.Domain
         public virtual IList<Category> Categories { get; set; }
         public virtual IList<Difficulty> Difficulties { get; set; }
         public IList<Question> Questions { get; set; }
+        public Type Adapter { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TriviaGame.Domain;
 using TriviaGame.IO;
 
 namespace QuestionsAdapters
@@ -17,5 +18,11 @@ namespace QuestionsAdapters
         /// <param name="pQuantity">La cantidad de las preguntas o null para todas</param>
         /// <returns>Una lista de preguntas</returns>
         IList<QuestionDTO> GetQuestions(CategoryDTO pCategory, DiffucultyDTO pDifficulty, int pQuantity);
+
+        /// <summary>
+        /// Devuelve el set de preguntas con sus categorias y dificultades
+        /// </summary>
+        /// <returns>Un set de preguntas</returns>
+        QuestionsSet GetSet();
     }
 }
