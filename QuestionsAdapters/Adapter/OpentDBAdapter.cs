@@ -103,7 +103,7 @@ namespace QuestionsAdapters.Adapter
                 Name = "Open Trivia DB",
                 Categories = new List<Category>(),
                 Difficulties = new List<Difficulty>(),
-                Adapter = typeof(OpentDBAdapter)
+                Adapter = typeof(OpentDBAdapter).ToString()
             };
 
             Enum.GetValues(typeof(QuestionCategory));
