@@ -11,7 +11,7 @@ namespace QuestionsAdapters
     public interface IQuestionsAdapter
     {
         /// <summary>
-        /// Obtiene las preguntas del conjunto de preguntas
+        /// Obtiene las preguntas del conjunto
         /// </summary>
         /// <param name="pCategory">La categoria de las preguntas o null para todas</param>
         /// <param name="pDifficulty">La dificultad de las preguntas o null para todas</param>
