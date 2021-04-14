@@ -16,7 +16,8 @@ namespace TriviaGame.DAL.EntityFramework.Migrations
             {
                 Id = 1,
                 Name = "Open Trivia DB",
-                MaxQuantity = 20
+                MaxQuantity = 20,
+                Adapter = "TriviaGame.Adapter.OpentDBAdapter"
             };
 
             bOpentdbSet.Categories = new List<Category>()
@@ -93,7 +94,7 @@ namespace TriviaGame.DAL.EntityFramework.Migrations
                     Id = 2,
                     Description = "Which of the following card games revolves around numbers and basic math?",
                     Category = bOpentdbSet.Categories[0],
-                    Difficulty = bOpentdbSet.Difficulties[0],
+                    Difficulty = bOpentdbSet.Difficulties[1],
                     Set = bOpentdbSet,
                     Answers = new List<Answer>()
                     {
@@ -123,8 +124,8 @@ namespace TriviaGame.DAL.EntityFramework.Migrations
                 {
                     Id = 3,
                     Description = "Who wrote the 1967 horror novel 'Rosemary´s Baby'?",
-                    Category = bOpentdbSet.Categories[1],
-                    Difficulty = bOpentdbSet.Difficulties[0],
+                    Category = bOpentdbSet.Categories[0],
+                    Difficulty = bOpentdbSet.Difficulties[1],
                     Set = bOpentdbSet,
                     Answers = new List<Answer>()
                     {
@@ -154,7 +155,7 @@ namespace TriviaGame.DAL.EntityFramework.Migrations
                 {
                     Id = 4,
                     Description = "What's the second book in George R. R. Martin's 'A Song of Ice and Fire' series?",
-                    Category = bOpentdbSet.Categories[1],
+                    Category = bOpentdbSet.Categories[0],
                     Difficulty = bOpentdbSet.Difficulties[1],
                     Set = bOpentdbSet,
                     Answers = new List<Answer>()

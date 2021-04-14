@@ -20,25 +20,13 @@ namespace TriviaGame.DAL.EntityFramework.Mapping
             Property(pSession => pSession.Score)
                 .IsRequired();
 
-            Property(pSession => pSession.Quantity)
-                .IsRequired();
-
             Property(pSession => pSession.Time)
                 .IsRequired();
 
+            Property(pSession => pSession.Timestamp)
+                .IsRequired();
+
             HasRequired(pSession => pSession.User)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-
-            HasRequired(pSession => pSession.Set)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-
-            HasRequired(pSession => pSession.Category)
-                .WithMany()
-                .WillCascadeOnDelete(false);
-
-            HasRequired(pSession => pSession.Difficulty)
                 .WithMany()
                 .WillCascadeOnDelete(false);
         }

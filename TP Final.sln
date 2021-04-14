@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriviaGame", "TP Final\TriviaGame.csproj", "{E6FC7A65-8250-4116-84A7-90F113AB1CB5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuestionsAdapters", "QuestionsAdapters\QuestionsAdapters.csproj", "{77660A45-5A02-4205-B431-876CA0C18340}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriviaGUI", "WindowsFormsApp1\TriviaGUI.csproj", "{68E692CE-EA80-42FE-B806-1D120A5B3CD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpentDB", "OpentDB\OpentDB.csproj", "{88CA9031-43FE-447F-9F26-CA4F692EEEC5}"
@@ -25,10 +23,6 @@ Global
 		{E6FC7A65-8250-4116-84A7-90F113AB1CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6FC7A65-8250-4116-84A7-90F113AB1CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6FC7A65-8250-4116-84A7-90F113AB1CB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77660A45-5A02-4205-B431-876CA0C18340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77660A45-5A02-4205-B431-876CA0C18340}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77660A45-5A02-4205-B431-876CA0C18340}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77660A45-5A02-4205-B431-876CA0C18340}.Release|Any CPU.Build.0 = Release|Any CPU
 		{68E692CE-EA80-42FE-B806-1D120A5B3CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{68E692CE-EA80-42FE-B806-1D120A5B3CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68E692CE-EA80-42FE-B806-1D120A5B3CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU

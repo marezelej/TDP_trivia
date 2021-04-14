@@ -13,6 +13,7 @@ using TriviaGame.Contract;
 using TriviaGame.IO;
 using TriviaGame.Controller;
 using TriviaGUI.Modal;
+using TriviaGame.Error.General;
 
 namespace TriviaGUI
 {
@@ -20,7 +21,8 @@ namespace TriviaGUI
     {
         static int cDefaultQuantity = 10;
         private UserDTO iAuthenticatedUser;
-        private IQuestionsSetController iQuestionsSetController = new QuestionsSetController();
+        private IQuestionsSetController questionsSetController = new QuestionsSetController();
+        private ITriviaController triviaController = new TriviaController();
 
         public NewTest(UserDTO pAuthenticatedUser)
         {
@@ -34,7 +36,7 @@ namespace TriviaGUI
 
             try
             {
-                IEnumerable<QuestionsSetDTO> bQuestionsSets = iQuestionsSetController.GetAll();
+                IEnumerable<QuestionsSetDTO> bQuestionsSets = questionsSetController.GetAll();
                 comboSets.Items.AddRange(bQuestionsSets.ToArray());
                 if (bQuestionsSets.Count() == 1)
                 {
@@ -78,8 +80,40 @@ namespace TriviaGUI
 
         private void StartTest()
         {
-            SessionDTO session = new SessionDTO();
-            Test testWindow = new Test();
+            TriviaDTO bTrivia;
+            try
+            {
+                bTrivia = triviaController.CreateTrivia(
+                    iAuthenticatedUser,
+                    (QuestionsSetDTO)comboSets.SelectedItem,
+                    (CategoryDTO)comboCategory.SelectedItem,
+                    (DiffucultyDTO)comboDifficulty.SelectedItem,
+                    (int)numQuantity.Value
+                    );
+            }
+            catch (NoResultsException e)
+            {
+                System.Console.WriteLine(e);
+                System.Windows.MessageBox.Show(
+                    "No hay preguntas para las opciones seleccionadas. Por favor, seleccionar otras opciones y reintentar...",
+                    "No hay información",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+                return;
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine(e);
+                System.Windows.MessageBox.Show(
+                    "Ocurrió un error inesperado. Por favor, reintentar...",
+                    "Error de comunicación",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                );
+                return;
+            }
+            Test testWindow = new Test(bTrivia);
             testWindow.ShowDialog();
             Close();
         }

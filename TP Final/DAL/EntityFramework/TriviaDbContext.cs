@@ -49,7 +49,12 @@ namespace TriviaGame.DAL.EntityFramework
         /// <summary>
         /// El conjunto de conjuntos de preguntas
         /// </summary>
-        public IDbSet<QuestionsSet> QuestionsSets { get; set; }
+        public IDbSet<QuestionsSet> QuestionSets { get; set; }
+
+        /// <summary>
+        /// El conjunto de conjuntos de preguntas
+        /// </summary>
+        public IDbSet<Question> Questions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder pModelBuilder)
         {

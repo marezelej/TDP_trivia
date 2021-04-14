@@ -24,6 +24,8 @@ namespace TriviaGame.Controller
                 pConfiguration.CreateMap<QuestionsSet, QuestionsSetDTO>();
                 pConfiguration.CreateMap<Category, CategoryDTO>();
                 pConfiguration.CreateMap<Difficulty, DiffucultyDTO>();
+                pConfiguration.CreateMap<Question, QuestionDTO>();
+                pConfiguration.CreateMap<Answer, AnswerDTO>();
 
                 pConfiguration.CreateMap<QuestionsSetDTO, QuestionsSet>();
             });

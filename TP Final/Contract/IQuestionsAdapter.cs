@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TriviaGame.Domain;
 using TriviaGame.IO;
 
-namespace QuestionsAdapters
+namespace TriviaGame.Contract
 {
     /// <summary>
     /// Adaptador encargado de obtener las preguntas de un conjunto de preguntas
@@ -24,5 +24,14 @@ namespace QuestionsAdapters
         /// </summary>
         /// <returns>Un set de preguntas</returns>
         QuestionsSet GetSet();
+
+        /// <summary>
+        /// Devuelve el puntaje obtenido por el jugador
+        /// </summary>
+        /// <param name="Questions">Una lista con las preguntas de la trivia</param>
+        /// <param name="pDificulty">La dificultad de la trivia</param>
+        /// <param name="pSecondsSpent">Los segundos incurridos</param>
+        /// <returns>El puntaje final del jugador</returns>
+        float GetScore(IList<QuestionDTO> Questions, DiffucultyDTO pDificulty, int pSecondsSpent);
     }
 }

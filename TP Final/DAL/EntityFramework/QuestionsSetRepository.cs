@@ -20,9 +20,9 @@ namespace TriviaGame.DAL.EntityFramework
 
         public IEnumerable<QuestionsSet> GetAllWithCategoryAndDifficulty()
         {
-            return iDbContext.QuestionsSets
+            return iDbContext.QuestionSets
                 .Include(pSet => pSet.Categories)
-                .Include(pSet => pSet.Categories)
+                .Include(pSet => pSet.Difficulties)
                 .ToArray();
         }
     }

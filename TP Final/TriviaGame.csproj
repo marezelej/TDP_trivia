@@ -71,11 +71,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter\OpentDBAdapter.cs" />
     <Compile Include="Contract\IImportQuestionsService.cs" />
+    <Compile Include="Contract\IQuestionsAdapter.cs" />
     <Compile Include="Contract\ISessionFacade.cs" />
-    <Compile Include="Contract\ISetController.cs" />
+    <Compile Include="Contract\IQuestionsSetController.cs" />
+    <Compile Include="Contract\ITriviaController.cs" />
     <Compile Include="Contract\IUserFacade.cs" />
+    <Compile Include="Controller\TriviaController.cs" />
     <Compile Include="Controller\QuestionsSetController.cs" />
+    <Compile Include="DAL\EntityFramework\QuestionRepository.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\AnswerMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\QuestionMap.cs" />
     <Compile Include="DAL\EntityFramework\Mapping\DifficultyMap.cs" />
@@ -93,6 +98,7 @@
     <Compile Include="DAL\EntityFramework\TriviaDbContext.cs" />
     <Compile Include="DAL\EntityFramework\UnitOfWork.cs" />
     <Compile Include="DAL\EntityFramework\UserRepository.cs" />
+    <Compile Include="DAL\IQuestionRepository.cs" />
     <Compile Include="DAL\IQuestionsSetRepository.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\ISessionRepository.cs" />
@@ -110,11 +116,13 @@
     <Compile Include="Error\Authentication\NonAuthenticationException.cs" />
     <Compile Include="Error\Authentication\WrongPasswordException.cs" />
     <Compile Include="Error\Authentication\WrongFileNameException.cs" />
+    <Compile Include="Error\General\NoResultsException.cs" />
     <Compile Include="Error\User\UserExistsException.cs" />
     <Compile Include="IO\AnswerDTO.cs" />
     <Compile Include="IO\DifficultyDTO.cs" />
     <Compile Include="IO\CategoryDTO.cs" />
     <Compile Include="IO\QuestionDTO.cs" />
+    <Compile Include="IO\TriviaDTO.cs" />
     <Compile Include="IO\UserDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,8 +137,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\OpentDB\" />
-    <Folder Include="Trivia\" />
+    <ProjectReference Include="..\OpentDB\OpentDB.csproj">
+      <Project>{88ca9031-43fe-447f-9f26-ca4f692eeec5}</Project>
+      <Name>OpentDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

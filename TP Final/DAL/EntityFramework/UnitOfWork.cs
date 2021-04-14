@@ -31,6 +31,11 @@ namespace TriviaGame.DAL.EntityFramework
         public IQuestionsSetRepository QuestionsSetRepository { get; private set; }
 
         /// <summary>
+        /// El repositorio de preguntas
+        /// </summary>
+        public IQuestionRepository QuestionRepository { get; private set; }
+
+        /// <summary>
         /// Construye la UnitOfWork para el DbContext dado
         /// </summary>
         /// <param name="pDbContext">El DbContext a utilizar</param>
@@ -45,6 +50,7 @@ namespace TriviaGame.DAL.EntityFramework
             this.UserRepository = new UserRepository(pDbContext);
             this.SessionRepository = new SessionRepository(pDbContext);
             this.QuestionsSetRepository = new QuestionsSetRepository(pDbContext);
+            this.QuestionRepository = new QuestionRepository(pDbContext);
         }
 
         /// <summary>

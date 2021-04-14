@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TriviaGame.Contract
+namespace TriviaGame.Error.General
 {
-    public interface IQuestionsSetController
+    public class NoResultsException: Exception
     {
-        IEnumerable<QuestionsSetDTO> GetAll();
     }
 }

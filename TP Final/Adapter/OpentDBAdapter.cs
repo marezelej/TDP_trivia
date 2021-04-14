@@ -7,8 +7,9 @@ using OpentDB.IO;
 using OpentDB.API;
 using TriviaGame.Domain;
 using TriviaGame.Contract;
+using System.Linq;
 
-namespace QuestionsAdapters.Adapter
+namespace TriviaGame.Adapter
 {
     class OpentDBAdapter : IQuestionsAdapter
     {
@@ -114,7 +115,9 @@ namespace QuestionsAdapters.Adapter
 
         public float GetScore(IList<QuestionDTO> pQuestions, DiffucultyDTO pDificulty, int pSecondsSpent)
         {
-            int bQuantity = pQuestions.Count;
+            int bQuantity = pQuestions.Sum(q =>
+                    Convert.ToInt16(q.SelectedAnswer != null && q.SelectedAnswer.IsCorrect)
+                );
             int bCorrectQuantity = pQuestions.Count;
             float bQuestionsFactor = bCorrectQuantity / bQuantity;
             return bQuestionsFactor * pDificulty.Weight * GetTimeFactor(pSecondsSpent / bQuantity);

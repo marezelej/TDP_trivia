@@ -27,6 +27,11 @@ namespace TriviaGame.DAL
         IQuestionsSetRepository QuestionsSetRepository { get; }
 
         /// <summary>
+        /// El repositorio de preguntas
+        /// </summary>
+        IQuestionRepository QuestionRepository { get; }
+
+        /// <summary>
         /// Completa la transacción
         /// </summary>
         void Complete();

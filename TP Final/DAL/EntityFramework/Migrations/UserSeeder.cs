@@ -24,6 +24,16 @@ namespace TriviaGame.DAL.EntityFramework.Migrations
                 IsAdmin = true
             });
 
+            bDefaultUsers.Add(new User()
+            {
+                Id = 2,
+                FirstName = "Pepe",
+                LastName = "Pepito",
+                FileNumber = "1",
+                Password = "1",
+                IsAdmin = true
+            });
+
             foreach (User bUser in bDefaultUsers)
             {
                 if (pContext.Set<User>().Find(bUser.Id) == null)
