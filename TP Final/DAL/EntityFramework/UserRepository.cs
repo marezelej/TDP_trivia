@@ -29,5 +29,29 @@ namespace TriviaGame.DAL.EntityFramework
         {
             return iDbContext.Users.Where(u => u.FileNumber == pFileNumber).FirstOrDefault();
         }
+
+        /// <summary>
+        /// Elimina el primer usuario con legajo pFileNumber
+        /// </summary>
+        /// <param name="User">El usuario buscado</param>
+        /// <returns>El primer usuario encontrado</returns>
+
+        public void DeleteUser(User user)
+        {
+            return iDbContext.Users.Remove(u => u.FileNumber == user.pFileNumber).FirstOrDefault();
+        }
+
+         /// <summary>
+        /// Devuelve la lista de Usuarios
+        /// </summary>       
+        /// <returns>Lista de usuarios en base de datos</returns>
+
+        public List<User> getUserList()
+        {
+            using (var context = new MyContext())
+            {
+                return context.Users.ToList();
+            }
+        }
     }
 }

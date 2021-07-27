@@ -51,8 +51,7 @@
             this.UserStateLabel = new System.Windows.Forms.Label();
             this.userStateActive = new System.Windows.Forms.RadioButton();
             this.AddUserButton = new System.Windows.Forms.Button();
-            this.DeleteUserButton = new System.Windows.Forms.Button();
-            this.RefreshButton = new System.Windows.Forms.Button();
+            this.DeleteUserButton = new System.Windows.Forms.Button();            
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.UsersGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDGV)).BeginInit();
@@ -314,25 +313,13 @@
             this.DeleteUserButton.TabIndex = 12;
             this.DeleteUserButton.Text = "Eliminar Usuario";
             this.DeleteUserButton.UseVisualStyleBackColor = true;
-            this.DeleteUserButton.Click += new System.EventHandler(this.DeleteUserButton_Click);
-            // 
-            // RefreshButton
-            // 
-            this.RefreshButton.Location = new System.Drawing.Point(16, 470);
-            this.RefreshButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(101, 20);
-            this.RefreshButton.TabIndex = 13;
-            this.RefreshButton.Text = "Refrescar";
-            this.RefreshButton.UseVisualStyleBackColor = true;
-            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
-            // 
+            this.DeleteUserButton.Click += new System.EventHandler(this.DeleteUserButton_Click);            // 
+           
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 509);
-            this.Controls.Add(this.RefreshButton);
+            this.ClientSize = new System.Drawing.Size(554, 509);         
             this.Controls.Add(this.DeleteUserButton);
             this.Controls.Add(this.AddUserButton);
             this.Controls.Add(this.FilterGB);
@@ -365,8 +352,7 @@
         private System.Windows.Forms.Button DeleteUserButton;
         private System.Windows.Forms.DataGridView UsersDGV;
         private System.Windows.Forms.TextBox UserLastName;
-        private System.Windows.Forms.TextBox UserFirstName;
-        private System.Windows.Forms.Button RefreshButton;
+        private System.Windows.Forms.TextBox UserFirstName;     
         private System.Windows.Forms.Label UserLastNameLabel;
         private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;

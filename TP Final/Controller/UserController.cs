@@ -78,6 +78,27 @@ namespace TriviaGame.Controller
         }
 
         /// <summary>
+        /// Borra el usuario usando el fileNumber
+        /// </summary>
+        /// <param name="pUser">El usuario a Borrar</param>
+
+        public void DeleteUser(UserDTO pUser){
+              using (var bDbContext = new TriviaDbContext())
+            {
+                using (IUnitOfWork bUoW = new UnitOfWork(bDbContext))
+                {
+                    if (bUoW.UserRepository.GetByFileNumber(pUser.FileNumber) == null)
+                        throw new UserNotExistsException();
+                }
+                   
+               User bUser = this.getUser(pUser.FileNumber);
+                bUoW.UserRepository.DeleteUser(bUser);
+
+                bUoW.Complete();
+             }  
+        }
+
+        /// <summary>
         /// Autentica el usuario
         /// </summary>
         /// <param name="pFileNumber">El número de legajo del usuario</param>
